@@ -1,0 +1,540 @@
+.slider-w {
+  margin-top: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.slider-w  img {
+   width: 100%;
+}
+.page-wrapper.container {
+  background: #fff;
+  margin-top: 10rem !important;
+  position: relative;
+}
+
+.form-signin {
+  max-width: 480px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+}
+h2.form-signin-heading {
+    color: #342120;
+    font-family: inherit;
+    font-size: 2.5rem;
+}
+
+.form-control {
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  height: auto;
+  border-radius: 1px;
+}
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+    position: absolute;
+    top: 22px;
+    padding: 14px 15px 12px 15px;
+    background-color: rgba(0,0,0,0.05);
+    pointer-events: none;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    font-size: 17px;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  65px; }
+
+.form-signin input {
+  margin-bottom:15px;
+  height:44px;
+}
+
+.form-signin .forgot-password {
+  display: block;
+  padding-top:2px;
+  padding-bottom:2px;
+  margin-top:-8px;
+  margin-bottom:30px;
+  font-size:12px;
+  color: #666;
+}
+
+.account-signup {
+  max-width: 380px;
+  padding: 15px 35px;
+  margin: 0 auto;
+  background-color: #1e73bc;
+  color: #fff;
+}
+.btn-login {
+	background: #E73C40;
+	color: #fff;
+}
+.btn-login:hover {
+	background: #1F8BC2;
+}
+
+.mydetails , .activity-area .tab-pane {
+  padding: 30px;
+}
+
+.mydetails label {
+  color: #666;
+  font-family: inherit;
+  font-size: 14px;
+}
+.activity-area .nav-tabs>li>a {
+    font-size: 18px;
+    background: #A8E4FF;
+ /* border-radius: 0; */
+    padding: 10px 30px;
+    color: #fff;
+}
+.activity-area .nav-tabs>li.active>a, .activity-area .nav-tabs>li.active>a:focus, .activity-area .nav-tabs>li.active>a:hover {
+    background: #fff;
+    color: #555;
+}
+
+.activity-area .tab-content {
+
+    border: 1px solid #ccc;
+    overflow: hidden;
+    border-radius: 0px;
+    border-top: none;
+}
+
+a.logmeout {
+    background: #3BC1FF;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    right: 0px;
+    padding: 8px 20px;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.tab-pane table a {
+  color: #666;
+}
+
+/* form wizard */
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+section.wizardform {
+    padding: 0 20px;
+}
+
+.wizardform label {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.wizardform input {
+    padding: 6px;
+    color: #333;
+    font-size: 16px;
+}
+
+input.wpcf7-date {
+    line-height: normal !important;
+}
+
+.wizardform .row {
+    margin-bottom: 20px;
+}
+
+.wizardform select {
+    padding: 8px !important;
+}
+
+.wizardform h3{
+    color: #d32218;
+    margin-bottom: 20px;
+}
+h3.bedrooms-heading {
+    font-size: 14px;
+    margin: 35px 20px 0 0px;
+    text-align: right;
+}
+.toggle label.btn {
+    height: 34px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: -webkit-center;
+}
+
+label.btn.btn-primary.toggle-on {
+    background: #3BC1FF;
+    color: #fff;
+}
+
+.wizardform .panel.panel-default {
+    border: none;
+    box-shadow: 0 0 0 #000;
+}
+.login-link {
+  color: #E73C40;
+}
+
+/*************************************   ICONES SALLE   *******************************************/
+.iconesalle{
+  display:block;
+  float:left;
+  width: 51px;
+  height:30px;
+}
+
+/*************************************   ICONES EVENEMENT   *******************************************/
+.iconeevenement { position:relative; display:inline-block; width:25%; height:95px; padding:15px 15px 0 0; box-sizing:padding-box; cursor:pointer; }
+.iconeevenement .picto-fond { position:relative; width:78px; height:78px; margin:1px; background-color:#3BC1FF; border-radius:50%; }
+.iconeevenement .picto { position:absolute; left:-1px; top:-1px; width:80px; height:80px; background-size: 80px 80px; }
+.iconeevenement label { position:absolute; left:0; top:15px; display:block; width:95%; height:80px; margin:0; padding:15px 0 0 85px; box-sizing:padding-box; font-weight:inherit; }
+
+.iconeevenement.inactive { -webkit-filter:blur(2px); -moz-filter:blur(2px); -ms-filter:blur(2px); -o-filter:blur(2px); filter:blur(2px); }
+.iconeevenement:hover, .iconeevenement.active { font-weight:bold; color:#4DBDD0; -webkit-filter:blur(0); -moz-filter:blur(0); -ms-filter:blur(0); -o-filter:blur(0); filter:blur(0); }
+
+.iconeevenement-reunionaffaire .picto, .iconeevenement-reunionaffaire.inactive .picto { background-image:url('../../images/icones-sejour-seminaire-off.png'); }
+.iconeevenement-reunionaffaire:hover .picto, .iconeevenement-reunionaffaire.active .picto { background-image:url('../../images/icones-sejour-seminaire-on.png'); }
+
+.iconeevenement-evenassociatif .picto, .iconeevenement-evenassociatif.inactive .picto { background-image:url('../../images/icones-sejour-even-asso-off.png'); }
+.iconeevenement-evenassociatif:hover .picto, .iconeevenement-evenassociatif.active .picto { background-image:url('../../images/icones-sejour-even-asso-on.png'); }
+
+.iconeevenement-entreprise .picto, .iconeevenement-entreprise.inactive .picto { background-image:url('../../images/icones-sejour-comite-entreprise-off.png'); }
+.iconeevenement-entreprise:hover .picto, .iconeevenement-entreprise.active .picto { background-image:url('../../images/icones-sejour-comite-entreprise-on.png'); }
+
+.iconeevenement-musique .picto, .iconeevenement-musique.inactive .picto { background-image:url('../../images/icones-sejour-gr-musique-off.png'); }
+.iconeevenement-musique:hover .picto, .iconeevenement-musique.active .picto { background-image:url('../../images/icones-sejour-gr-musique-on.png'); }
+
+.iconeevenement-scolaire .picto, .iconeevenement-scolaire.inactive .picto { background-image:url('../../images/icones-sejour-voyage-scolaire-off.png'); }
+.iconeevenement-scolaire:hover .picto, .iconeevenement-scolaire.active .picto { background-image:url('../../images/icones-sejour-voyage-scolaire-on.png'); }
+
+.iconeevenement-sport .picto, .iconeevenement-sport.inactive .picto { background-image:url('../../images/icones-sejour-equipe-sport-off.png'); }
+.iconeevenement-sport:hover .picto, .iconeevenement-sport.active .picto { background-image:url('../../images/icones-sejour-equipe-sport-on.png'); }
+
+.iconeevenement-famille .picto, .iconeevenement-famille.inactive .picto { background-image:url('../../images/icones-sejour-famille-off.png'); }
+.iconeevenement-famille:hover .picto, .iconeevenement-famille.active .picto { background-image:url('../../images/icones-sejour-famille-on.png'); }
+
+.iconeevenement-excursion .picto, .iconeevenement-excursion.inactive .picto { background-image:url('../../images/icones-sejour-excursion-off.png'); }
+.iconeevenement-excursion:hover .picto, .iconeevenement-excursion.active .picto { background-image:url('../../images/icones-sejour-excursion-on.png'); }
+
+@media screen and (max-width:768px)
+{
+  .iconeevenement { width:100%; }
+}
+/*************************************   ICONES TARIF   *******************************************/
+.iconetarif { position:relative; display:inline-block; width:25%; height:95px; padding:15px 15px 0 0; box-sizing:padding-box; cursor:pointer; }
+.iconetarif .picto-fond { position:relative; width:78px; height:78px; margin:1px; background-color:#3CBED2; border-radius:50%; }
+.iconetarif .picto { position:absolute; left:-1px; top:-1px; width:80px; height:80px; background-size:80px 80px; }
+.iconetarif label { position:absolute; left:0; top:15px; display:block; width:95%; height:80px; margin:0; padding:15px 0 0 85px; box-sizing:padding-box; font-weight:inherit; }
+
+.iconetarif.inactive { -webkit-filter:blur(2px); -moz-filter:blur(2px); -ms-filter:blur(2px); -o-filter:blur(2px); filter:blur(2px); }
+.iconetarif:hover, .iconetarif.active { font-weight:bold; color:#4DBDD0; -webkit-filter:blur(0); -moz-filter:blur(0); -ms-filter:blur(0); -o-filter:blur(0); filter:blur(0); }
+
+.iconetarif-chseule .picto, .iconetarif-chseule.inactive .picto { background-image:url('../../images/icones-restauration-ch-off.png'); }
+.iconetarif-chseule:hover .picto, .iconetarif-chseule.active .picto { background-image:url('../../images/icones-restauration-ch-on.png'); }
+
+.iconetarif-chpdj .picto, .iconetarif-chpdj.inactive .picto { background-image:url('../../images/icones-restauration-ch-pt-dej-off.png'); }
+.iconetarif-chpdj:hover .picto, .iconetarif-chpdj.active .picto { background-image:url('../../images/icones-restauration-ch-pt-dej-on.png'); }
+
+.iconetarif-demipension .picto, .iconetarif-demipension.inactive .picto { background-image:url('../../images/icones-restauration-demi-pension-off.png'); }
+.iconetarif-demipension:hover .picto,.iconetarif-demipension.active .picto { background-image:url('../../images/icones-restauration-demi-pension-on.png'); }
+
+.iconetarif-pensioncomp .picto, .iconetarif-pensioncomp.inactive .picto { background-image:url('../../images/icones-restauration-pension-complete-off.png'); }
+.iconetarif-pensioncomp:hover .picto,.iconetarif-pensioncomp.active .picto { background-image:url('../../images/icones-restauration-pension-complete-on.png'); }
+
+@media screen and (max-width:768px)
+{
+  .iconetarif { width: 100%; }
+}
+
+.iconetarif2 { width:80px; margin:0 auto; padding:12px;  padding-top: 5px;}
+.iconetarif2 .picto-fond { position:relative; width:58px; height:58px; margin:1px; background-color:#3CBED2; border-radius:50%; }
+.iconetarif2 .picto { position:absolute; left:-1px; top:-1px; width:60px; height:60px; background-size:60px 60px; }
+.iconetarif2 { display:block; color:#4DBDD0; text-align:center; font-weight:bold; font-size:12px; }
+
+.iconetarif2-chseule .picto { background-image:url('../../images/icones-restauration-ch-off.png'); }
+.iconetarif2-chpdj .picto { background-image:url('../../images/icones-restauration-ch-pt-dej-off.png'); }
+.iconetarif2-demipension .picto { background-image:url('../../images/icones-restauration-demi-pension-off.png'); }
+.iconetarif2-pensioncomp .picto { background-image:url('../../images/icones-restauration-pension-complete-off.png'); }
+
+.iconetarif2-salle_classe .picto { background-image:url('../../images/salle-classe_3.png'); }
+.iconetarif2-salle_theatre .picto { background-image:url('../../images/salle-theatre.png'); }
+.iconetarif2-salle_reunion .picto { background-image:url('../../images/salle-re-union.png'); }
+.iconetarif2-salle_enu .picto { background-image:url('../../images/salle-enu.png'); }
+.iconetarif2-salle_cabaret .picto { background-image:url('../../images/salle-cabaret.png'); }
+.iconetarif2-salle_cocktail .picto { background-image:url('../../images/salle-cocktail.png'); }
+.iconetarif2-salle_nothing .picto { background-image:url('../../images/salle-nothing.png'); }
+
+
+.hide {
+    display: none!important;
+}
+
+.iconetarif3-autocar .picto, .iconetarif3-autocar.inactive .picto { background-image:url('../../images/icones-trans-autocar-off.png'); }
+.iconetarif3-autocar:hover .picto,.iconetarif3-autocar.check .picto { background-image:url('../../images/icones-trans-autocar-on.png'); }
+
+.iconetarif3-train .picto, .iconetarif3-train.inactive .picto { background-image:url('../../images/icones-trans-train-off.png'); }
+.iconetarif3-train:hover .picto,.iconetarif3-train.check .picto { background-image:url('../../images/icones-trans-train-on.png'); }
+
+.iconetarif3-public .picto, .iconetarif3-public.inactive .picto { background-image:url('../../images/icones-trans-pubtrans-off.png'); }
+.iconetarif3-public:hover .picto,.iconetarif3-public.check .picto { background-image:url('../../images/icones-trans-pubtrans-on.png'); }
+
+.iconetarif3-plane .picto, .iconetarif3-plane.inactive .picto { background-image:url('../../images/icones-trans-plane-off.png'); }
+.iconetarif3-plane:hover .picto,.iconetarif3-plane.check .picto { background-image:url('../../images/icones-trans-plane-on.png'); }
+
+.iconetarif3-notrans .picto, .iconetarif3-notrans.inactive .picto { background-image:url('../../images/icones-trans-notrans-off.png'); }
+.iconetarif3-notrans:hover .picto,.iconetarif3-notrans.check .picto { background-image:url('../../images/icones-trans-notrans-on.png'); }
+
+.iconetarif.check label { font-weight: 600; }
+
+.row.grouprow {
+    background: #f1f1f1;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 0px;
+}
+.txtlabel.text-center {
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+.txterror {
+  color: red;
+}
+
+/*theme html */
+.row.grouprow.themerow {
+  background: #EDF3F7;
+}
+div.product-chooser{   
+}
+
+.theme-box {
+  padding:0;
+}
+
+div.product-chooser.disabled div.product-chooser-item {
+  zoom: 1;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  cursor: default;
+}
+
+div.product-chooser div.product-chooser-item{
+  padding: 10px;
+  border-radius: 0px;
+  cursor: pointer;
+  position: relative;
+  border: 0px solid #efefef;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+  min-height: 180px;
+  max-height: 180px;
+  padding-top: 30px;
+}
+  
+div.product-chooser div.product-chooser-item.selected {
+    border: 2px solid #fff;
+    background: #E73C40;
+    padding: 8px;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    overflow: hidden;
+    border-radius: 0;
+    color: #fff;
+}
+  
+div.product-chooser div.product-chooser-item img{
+  padding: 0;
+}
+
+div.product-chooser div.product-chooser-item span.title{
+  display: block;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+div.product-chooser div.product-chooser-item span.description{
+  font-size: 12px;
+}
+
+div.product-chooser div.product-chooser-item input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility:hidden;
+}
+.single-item h3 {
+    font-family: inherit;
+    font-size: 16px;
+    text-transform: capitalize;
+    margin: 0 0 10px 0;
+}
+.blue-box p {
+    color: #FFF;
+}
+
+.blue-box h3 {
+    color: #fff;
+}
+.product-chooser-item  [class^="eeicon-"], .product-chooser-item [class*="eeicon-"] {
+    color: #1e73bc;
+    font-size: 3.5rem;
+}
+.blue-box  [class^="eeicon-"],.blue-box  [class*="eeicon-"] {
+    color: #fff;
+}
+.selected h3 {
+    color: #fff;
+}
+.product-chooser-item.selected  [class^="eeicon-"], .product-chooser-item.selected [class*="eeicon-"] {
+    color: #fff;
+}
+
+.slider.slider-horizontal {
+    width: 100%;
+}
+
+#ex6CurrentSliderValLabel {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    font-size: 16px;
+    margin: 15px 0 0 0;
+    font-family: inherit;
+    color: #333;
+}
+span#ex6SliderVal {
+    color: #d32218;
+    font-weight: 600;
+}
+
+a.edit-trip {
+    margin: 0 5px 0px 0px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+a.logmeout.back {
+    left: 0;
+    width: 80px;
+    background: #E73C40;
+}
+
+.slider-w .doc-view {
+  width: 60px;
+}
+
+ /* CHAT */
+
+ ul.chat {
+    max-height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+ul.chat li {
+    list-style: none;
+}
+.chat .header {
+    overflow: hidden;
+}
+li.left , .chat li.grayone {
+    background: #f1f1f1;
+    padding: 0px 10px;
+    margin-bottom: 0px;
+}
+li.left {
+  padding: 0px 10px;
+}
+.chat-body {
+    padding-top: 5px;
+}
+.trip-heading {
+    text-transform: capitalize;
+    font-family: inherit;
+    margin-bottom: 5px;
+    font-size: 3rem;
+}
+.trip-head {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: red;
+    border-bottom: 1px dashed #ccc;
+    width: 82%;
+    padding: 0 0 5px 0;
+}
+
+/* Register area style */
+.register-area label {
+    color: #333;
+    font-size: 1.5rem;
+    padding: 0 0 0 5px;
+}
+.register-head {
+    color: #E73C40;
+}
+
+
+/* Admin style */

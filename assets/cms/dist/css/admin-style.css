@@ -1,0 +1,38 @@
+.person-details h3 {
+    margin: 0 0 5px 0;
+}
+.white-bg {
+	background: #fff;
+}
+ /* CHAT */
+
+ ul.chat {
+    max-height: 150px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+ul.chat li {
+    list-style: none;
+}
+.chat .header {
+    overflow: hidden;
+}
+li.left , .chat li.grayone {
+    background: #f1f1f1;
+    padding: 0px 10px;
+    margin-bottom: 0px;
+}
+li.left {
+  padding: 0px 10px;
+}
+.chat-body {
+    padding-top: 5px;
+}
+
+img.img-view {
+    width: 75px;
+}
+.tablepanel {
+    margin-top: 15px;
+    border-top: 2px solid #ccc;
+}

@@ -1,0 +1,146 @@
+.rg-thumbs {
+    bottom: -3px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+.es-carousel-wrapper {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    position: relative;
+}
+.es-carousel {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    overflow: hidden;
+    margin-left: -25px;
+    height: 71px;
+}
+.es-carousel ul {
+    display: none;
+    /*margin: 0 auto;*/
+   /* width: 95% !important;*/
+    /*padding: 0 0 0 15px;
+    float: left;*/
+}
+.es-carousel ul li {
+    display: block;
+    float: left;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+.es-carousel ul li a {
+    border-color: #222;
+    border-style: solid;
+    display: block;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out 0s;
+}
+.es-carousel ul li.selected a {
+    border-color: #fff;
+    opacity: 1;
+}
+.es-carousel ul li a img {
+    border: medium none;
+    display: block;
+    height: 65px;
+    max-width: 100%;
+}
+.es-nav span {
+    background: transparent url("https://tympanus.net/Tutorials/ResponsiveImageGallery/images/nav_thumbs.png") no-repeat scroll left top;
+    cursor: pointer;
+    height: 26px;
+    left: 8px;
+    margin-top: -13px;
+    opacity: 0.8;
+    position: absolute;
+    text-indent: -9000px;
+    top: 50%;
+    width: 14px;
+}
+.es-nav span.es-nav-next {
+    background-position: right top;
+    left: auto;
+    right: 8px;
+}
+.es-nav span:hover {
+    opacity: 1;
+}
+body {
+    background: #fff none repeat scroll 0 0;
+    color: #333;
+    font-family: "PT Sans Narrow",Arial,sans-serif;
+    font-size: 14px;
+}
+.rg-image-wrapper {
+    min-height: 20px;
+   /* padding: 20px 30px;*/
+    position: relative;
+}
+.rg-image {
+    height: 580px;
+    line-height: 0;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+.rg-image img {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+.rg-image-nav a {
+    background: rgba(0, 0, 0, 0) url("https://tympanus.net/Tutorials/ResponsiveImageGallery/images/nav.png") no-repeat scroll -20% 50%;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    outline: medium none;
+    position: absolute;
+    text-indent: -9000px;
+    top: 0;
+    width: 28px;
+    z-index: 9;
+}
+.rg-image-nav a.rg-image-nav-next {
+    background-position: 115% 50%;
+    left: auto;
+    right: 0;
+}
+.rg-image-nav a:hover {
+    opacity: 0.6;
+}
+.rg-caption {
+    margin-top: 15px;
+    position: relative;
+    text-align: center;
+}
+.rg-caption p {
+    font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 16px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.rg-view {
+    height: 30px;
+}
+.rg-loading {
+    background: #000 url("https://tympanus.net/Tutorials/ResponsiveImageGallery/images/ajax-loader.gif") no-repeat scroll center center;
+    border-radius: 10px;
+    height: 46px;
+    left: 50%;
+    margin: -23px 0 0 -23px;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    width: 46px;
+    z-index: 100;
+}
+.rg-caption-wrapper {
+    display: none;
+}
+.rg-image-nav {
+    display: block;
+    
+}

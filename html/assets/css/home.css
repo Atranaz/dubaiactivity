@@ -1,0 +1,1419 @@
+/*Gloabl*/
+.no-round {
+	border-radius: 0;
+}
+@font-face {
+  font-family: 'proxmanova';
+  src: url('../fonts/ProximaNova-Regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ProximaNova-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ProximaNova-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ProximaNova-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ProximaNova-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'proxmanovalight';
+  src: url('../fonts/ProximaNova-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ProximaNova-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ProximaNova-Light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ProximaNova-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ProximaNova-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'proxmanovabold';
+  src: url('../fonts/ProximaNova-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/ProximaNova-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/ProximaNova-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/ProximaNova-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/ProximaNova-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+a {
+    
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    outline: none;
+ }
+ a:hover , a:focus , a:active {
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    text-decoration: none;
+    outline: none;
+ }
+ .red {
+    color: red !important;
+ }
+ .dd-whitebg {
+  background-color: #fff;
+ }
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+ body {
+  overflow-x: hidden;
+ }
+ 
+.margin-top1 {
+    margin-top: 1px !important;
+}
+.margin-top2 {
+    margin-top: 2px !important;
+}
+.margin-bot1 {
+    margin-bottom: 1px !important;
+}
+.margin-bot2 {
+    margin-bottom: 2px !important;
+}
+.margin-bot3 {
+    margin-bottom: 3px !important;
+}
+.margin-right1 {
+    margin-right: 1px !important;
+}
+.margin-right2 {
+    margin-right: 2px !important;
+}
+.margin-left1 {
+    margin-left: 1px !important;
+}
+.margin-left2 {
+    margin-left: 2px !important;
+}
+.no-padding {
+    padding: 0px !important;
+}
+.clearfix {
+    clear: both;
+}
+.row-centered {
+    text-align:center;
+}
+.breadcrumb>li+li:before {
+  padding: 0 1px;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.modal-content {
+  border-radius: 0;
+}
+.modal-title {
+    color: red;
+    font-family: proxmanova;
+    text-transform: uppercase;
+}
+.modal-header {
+  border: none;
+  padding: 10px 15px;
+}
+a.du-callink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+/*Home Page*/
+.du-extoparea {
+	background-color: #020202;
+	
+}
+.du-extoparea ul {
+	margin: 0;
+}
+.du-extoparea ul li {
+    float: left;
+    width: 14%;
+    padding: 6px 0;
+    border-right: 1px solid #313131;
+    text-align: center;
+    height: 50px;
+}
+.dd-toplist.dd-toptime {
+    width: 17%;
+    padding: 17px 0 0 0;
+}
+.dd-toplist.dd-topweather {
+    width: 14%;
+    position: relative;
+}
+
+.du-temp {
+    background: #020202 none repeat scroll 0 0;
+    color: #999;
+    font-family: proxmanova;
+    font-size: 12px;
+    padding: 5px;
+    position: absolute;
+    right: 40px;
+    top: 13px;
+}
+.du-temp > span {
+    margin: 0 0 0 5px;
+}
+.dd-toplist.dd-topcurency {
+    width: 10%;
+}
+.dd-toplist.dd-topevnts {
+    width: 10%;
+}
+.dd-toplist.dd-topsearch {
+    width: 6%;
+}
+.dd-toplist > a {
+    padding: 2px 0 0;
+}
+.dd-toplogin .dropdown-toggle {
+    color: #999;
+    font-family: proxmanova;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.dd-toplogin .caret {
+    margin-left: 10px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px dashed;
+}
+.dropdown.dd-toplist.dd-toplogin {
+    padding: 17px 0 0;
+}
+
+.du-imlogo {
+	margin: 7px 0 9px;
+}
+.du-yellowhead {
+    background-color: #feb913;
+    color: #fff;
+    text-align: center;
+    font-family: 'proxmanova', verdana , serif;
+    text-transform: uppercase;
+    padding: 15px 0;
+    margin: 2px 0 0 0;
+    line-height: 32px;
+}
+.du-skyhead {
+  background-color: #5ba8df;
+  color: #fff;
+  text-align: left;
+  font-family: 'proxmanova', verdana , serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 15px 10px 10px;
+  margin: 0;
+}
+.du-redhead {
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  font-family: 'proxmanovalight', verdana , serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 15px 10px 10px;
+  margin: 0;
+}
+
+/*Search Area*/
+
+.dd-searcharea {
+    background: #020202;
+    border: medium none;
+    font-family: proxmanovabold;
+    font-size: 16px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    color: #999;
+    text-decoration: blink;
+}
+.dd-searcharea:focus { 
+  background-color: #333;
+  color: #999;
+}
+.container-fluid.du-extoparea.dd-searchbox {
+    border-top: 1px solid #313131;
+}
+.closeseracharea {
+    color: #999;
+    display: block;
+    
+    font-size: 20px;
+    margin: 10px 0 0;
+}
+
+/*Menu styling*/
+.nav.nav-pills.nav-ddmenu {
+    margin-top: 15px;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+	background-color: transparent;
+    border-bottom: 3px solid #ff000b;
+    border-radius: 0;
+     color: #ff000b;
+    
+}
+.nav-ddmenu li a {
+	font-family: 'proxmanova',verdana, serif;
+	color: #4B4B4B;
+	padding: 26px 12px;
+	font-size: 14px;
+  border-bottom: 3px solid #fff;
+  background:rgba(0, 0, 0, 0) url("../images/menu-sep.jpg") no-repeat scroll right center;
+
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    
+}
+.nav-ddmenu li:last-child a {
+  background:none;
+}
+
+.nav-ddmenu li.active a, .nav-ddmenu li a:hover , .nav-ddmenu li a:focus , .nav-ddmenu li a:active {
+    background-color: transparent;
+    border-bottom: 3px solid #ff000b;
+    border-radius: 0;
+    
+    color: #ff000b;
+}
+
+.dropdown-menu.dd-droparealogin {
+    background: #020202 none repeat scroll 0 0;
+    width: 200px;
+}
+.dropdown .dd-droparealogin > li {
+    border-bottom: 1px solid #313131;
+    padding: 0;
+    border-right: medium none;
+    color: #4B4B4B;
+    height: auto !important;
+    width: 100% !important;
+}
+.dropdown-menu > li > a:hover {
+  background-color: #666;
+}
+.dropdown-menu > li > a {
+    color: #666;
+    font-family: proxmanova;
+    font-size: 13px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+}
+/*Mega Menu */
+.dropdown-menu {
+  border: none;
+  border-radius: 0;
+  box-shadow:0 0px 0px rgba(0, 0, 0, 0.176);
+  margin:0;
+  padding: 0;
+  background: transparent none repeat scroll 0 0;
+}
+.nav-ddmenu li ul li a , .nav-ddmenu li ul li a:hover {
+  border:none;
+}
+.menu-large {
+  position: static !important;
+}
+.megamenu{
+  /*padding: 20px 0px;*/
+  width:100%;
+}
+.panel-group .panel+.panel { margin:0; }
+.megamenu .panel-group {
+  margin: 0;
+}
+.panel-heading {
+  padding:0;
+}
+.megamenu .panel-title a {
+    background: transparent none repeat scroll 0 0;
+    border-bottom: 1px solid #bebebe;
+    display: block;
+    font-family: proxmanovalight;
+    font-size: 14px;
+    padding: 10px 10px 5px 2px;
+    text-transform: uppercase;
+}
+.megamenu .panel-title a:hover , .megamenu .panel-title a:active , .megamenu .panel-title a:focus  {
+  border-bottom: 1px solid #bebebe;
+  outline: none;
+}
+.panel-group.du-submeniabg {
+    background: rgba(0, 0, 0, 0) url("../images/submenu-bg85.png") repeat scroll 0 0;
+    min-height: 230px;
+    padding-top: 20px;
+    border-top: 1px solid #d8d8d8;
+}
+.du-submeniabg .panel-title {
+    font-size: 15px;
+}
+.du-submeniabg .panel.dd-submenustyle {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.05);
+    margin-left: 0px;
+    padding-top: 0;
+}
+.du-submeniabg .panel-heading {
+    background: transparent none repeat scroll 0 0;
+    box-shadow: 0 0 0 transparent;
+    margin-left: 25px;
+}
+.panel-collapse.du-submenulistarea {
+    background: #fff;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.du-submenulistarea .list-group {
+    border: medium none !important;
+    
+}
+.du-submenulistarea .list-group-item {
+    background: transparent none repeat scroll 0 0;
+    border: medium none;
+    padding: 0;
+}
+.du-submenulistarea .list-group-item > a {
+    display: block;
+    font-family: proxmanovalight;
+    font-size: 13px;
+    padding: 3px 0 3px 5px;
+    text-transform: uppercase;
+}
+.du-submenublockarea {
+    background: rgba(0, 0, 0, 0) url("../images/submenu-bg90.png") repeat scroll 0 0;
+    min-height: 230px;
+}
+.list-group-item:first-child ,
+.list-group-item:last-child {
+  border-radius: 0;
+}
+.du-essentialhead {
+    color: red;
+    font-family: proxmanovalight;
+    margin: 0;
+    padding: 10px;
+}
+.navbar-toggle {
+  background-color: #020202;
+  margin-right: 0;
+}
+.navbar-toggle .icon-bar {
+  color: #ccc;
+  background-color: #ccc;
+}
+.du-featbox {
+    background: #999 none repeat scroll 0 0;
+    height: 191px;
+    margin-right: 5px;
+    margin-top: 15px;
+    padding: 0;
+    width: 229px;
+}
+.du-featbox:hover {
+  background-color: red;
+}
+.nav-ddmenu li a.du-sunmenublockan {
+  padding: 0;
+}
+.du-menufeathead {
+    color: #fff;
+    font-family: proxmanova;
+    font-size: 18px;
+    margin: 0;
+    padding: 20px 10px 5px;
+    text-transform: uppercase;
+}
+.du-menufeattext {
+    color: #d8d8d8;
+    font-family: proxmanova;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 0 40px 0 10px;
+}
+.du-submenufeatimg {
+    margin: 15px 0 0;
+}
+/*Slider*/
+.carousel .item {
+    width: 100%; /*slider width*/
+    max-height: 600px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+}
+.carousel-indicators li{ 
+    width: 15px; 
+    height: 15px;
+    opacity: 0.5;
+     background-color: #fff;
+}
+.carousel-indicators .active {
+    width: 15px; 
+    height: 15px;
+   opacity: 1.0;
+
+}
+
+/*Content area start from here */
+.du-serviceblocks {
+    display: block;
+    position: relative;
+}
+
+.du-serviceheading {
+    color: #fff;
+    font-family: proxmanova;
+    font-size: 26px;
+    left: 30px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 35px;
+    z-index: 2;
+}
+.du-serviceheading > span {
+    display: block;
+}
+a.du-serviceblocks:hover img {
+    opacity: 0.7;
+}
+
+/*Thing to Do Area*/
+.du-travelareahead {
+    display: block;
+    position: relative;
+    max-height: 722px;
+}
+h2.du-longimghead {
+    color: #fff;
+    font-family: proxmanova;
+    left: 18px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 15px;
+}
+p.du-infopanel {
+    bottom: 10px;
+    color: #fff;
+    font-family: proxmanova;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 20px;
+    position: absolute;
+}
+h2.du-heading span {
+    display: block;
+}
+
+.du-priceblock {
+    background: #ee1a3b;
+    border-radius: 80px;
+    color: #fff;
+    height: 80px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 5px;
+    width: 80px;
+    z-index: 2;
+}
+.du-pricerange {
+    display: block;
+    font-family: proxmanovabold;
+    font-size: 16px;
+    line-height: 15px;
+    margin-top: 18px;
+    text-transform: uppercase;
+}
+.du-pcurency {
+    display: block;
+    font-family: proxmanovabold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 14px;
+}
+.du-priceno {
+    font-family: proxmanovabold;
+    font-size: 18px;
+    line-height: 10px;
+}
+.du-sbheading {
+    bottom: 2px;
+    color: #fff;
+    font-family: proxmanova;
+    font-size: 22px;
+    left: 5px;
+    position: absolute;
+    text-align: left;
+}
+.du-sbheading > span {
+    display: block;
+}
+
+/*second are start */
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+    
+    height: 90%;
+    left: 5%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    top: 5%;
+    width: 90%;
+    background: url('../images/white80-img.png');
+    background-repeat: repeat;
+}
+.hf-yellow .overlay {
+
+    background: url('../images/yellow90-img.png');
+    background-repeat: repeat;
+
+}
+.hovereffect:hover .overlay {}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+.hovereffect:hover img {
+  /*filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
+  filter: grayscale(1) blur(3px);
+  -webkit-filter: grayscale(1) blur(3px);*/
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.hovereffect h2 {
+   font-family: proxmanova;
+    font-size: 26px;
+    margin-bottom: 0;
+    margin-top: 65px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hovereffect a.info {
+   background-color: transparent;
+    border: 1px solid #666666;
+    color: #666666;
+    display: inline-block;
+    margin: 0;
+    padding: 7px 14px;
+    text-decoration: none;
+}
+.hf-yellow a.info {
+
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #ccc;
+  color: #ff000b;
+  border-color: #ff000b;
+}
+
+.hf-yellow a.info:hover {
+  box-shadow: 0 0 5px #fff;
+  color: #fff;
+  border-color: #666;
+}
+
+.hovereffect a.info, .hovereffect h2 , .hovereffect .overlay {
+  -webkit-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  color: #666666;
+  text-transform: uppercase;
+}
+.hf-yellow a.info, .hf-yellow h2 , .hf-yellow .overlay {
+    color:#fff;
+}
+
+.hovereffect:hover a.info, .hovereffect:hover h2 , .hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+/* Best Deals in Dubai */
+
+
+.du-partnetarea {
+    position: relative;
+    padding: 2px 0 0;
+}
+.dd-partnerimg {
+    position: absolute;
+    z-index: 99;
+}
+.du-mypartnercroll {
+    margin-top: 12px;
+    height: 75px;
+}
+.owl-item {
+    
+}
+.du-mypartnercroll.owl-carousel .owl-item img {
+  width: auto;
+}
+#sideadone .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+}
+
+/*Side Bar Style Here */
+.du-socialblock {
+    background: #4665ac;
+    padding: 20px 0;
+    text-align: center;
+    width: 98.5%;
+}
+.du-pincolor {
+    background-color: #cc2027;
+}
+.du-youtube {
+    background-color: #ec0000;
+}
+.du-tweetcolor {
+    background-color: #5ba8df;
+}
+.du-linkin {
+    background-color: #0073b6;
+}
+.du-gplucolor {
+    background-color: #e14a31;
+}
+.du-socialicon {
+    background: rgba(0, 0, 0, 0) url("../images/social-icons.png") no-repeat scroll 0 0;
+    display: block;
+    height: 50px;
+    margin: 0 auto 20px;
+    width: 50px;
+}
+.du-socialicon.du-pin {
+    background-position: -70px 0;
+}
+.du-socialicon.du-yticon {
+    background-position: -140px 0;
+}
+.du-socialicon.du-tweet {
+    background-position: -210px 0;
+}
+.du-socialicon.du-inlink {
+    background-position: -277px 0;
+}
+.du-socialicon.du-gplus {
+    background-position: -344px 0;
+}
+.du-socialcount , .du-socialtext {
+    color: #fff;
+    font-family: proxmanova;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+.du-socialtext {
+    font-family: proxmanovalight;
+    font-size: 20px;
+    display: block;
+}
+
+/*Twitter Timelinesdu-tweetlineone*/
+.du-tweetlineone {
+  height:400px; 
+  background:#f5fafe;
+}
+.du-tweetlinetwo {
+  height:376px; 
+  background:#f5fafe;
+}
+
+/*News Ticker */
+.du-news24logo {
+    padding: 10px;
+    width: 40%;
+}
+#nt-example1 p {
+    color: #333;
+    font-family: proxmanova;
+    font-size: 17px;
+    word-spacing: 3px;
+}
+#nt-example1 > li {
+    border-bottom: 2px solid #ddd4d0;
+    padding: 5px;
+}
+
+/*Ad Fade Css */
+/* fade on slider */
+
+/*
+inspired from http://codepen.io/Rowno/pen/Afykb 
+*/
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+now override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
+
+
+/*Responsive Calnder style*/
+.responsive-calendar .controls {
+  text-align: center;
+}
+.responsive-calendar .controls a {
+  cursor: pointer;
+}
+.responsive-calendar .controls h4 {
+  display: inline;
+}
+.responsive-calendar .day-headers,
+.responsive-calendar .days {
+  font-size: 0;
+}
+.responsive-calendar .day {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  width: 14.285714285714286%;
+  text-align: center;
+}
+.responsive-calendar .day a {
+    color: #9e9e9e;
+    cursor: pointer;
+    display: block;
+    font-family: proxmanova;
+    font-size: 16px;
+    letter-spacing: 2px;
+    padding: 20% 0;
+}
+.responsive-calendar .day a:hover {
+  background-color: red;
+  text-decoration: none;
+  color: #fff;
+}
+.responsive-calendar .today a {
+  background-color: red;
+  text-decoration: none;
+  color: #fff;
+  border-radius:50px; 
+}
+
+.responsive-calendar .day.active a {
+  background-color: #1d86c8;
+  color: #ffffff;
+}
+.responsive-calendar .day.active a:hover {
+  background-color: #36a0e2;
+}
+.responsive-calendar .day.active .not-current {
+  background-color: #8fcaef;
+  color: #ffffff;
+}
+.responsive-calendar .day.active .not-current:hover {
+  background-color: #bcdff5;
+}
+.responsive-calendar .day.not-current a {
+  color: #ddd;
+}
+.responsive-calendar .day .badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+}
+.controls {
+    background: red none repeat scroll 0 0;
+    padding: 0 0 5px;
+}
+.controls > h4 {
+    color: #fff;
+    font-family: proxmanova;
+    margin: 0;
+    text-transform: uppercase;
+}
+.controls .pull-left {
+    margin-left: 10%;
+}
+.controls .pull-right {
+    margin-right: 10%;
+}
+.controls .glyphicon {
+    color: #fff;
+}
+.day-headers {
+    background: red none repeat scroll 0 0;
+    color: #fff;
+    font-family: proxmanova;
+    padding: 0 0 8px;
+}
+/*Ads Setting*/
+#adsetarea1 {
+  display: none;
+}
+#adsetarea2 {
+  display: none;
+}
+#adsetarea3{
+  display: none;
+}
+
+
+/*Footer Area Style*/
+.du-footerarea {
+  background-color: #333;
+  display: table;
+  width: 100%;
+  padding: 0 0 10px;
+}
+.du-footerlink a {
+    color: #999;
+    font-family: proxmanova;
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+.du-footerlink a::before {
+    content: ">";
+    font-family: proxmanova;
+    margin-right: 4px;
+}
+h4.du-fheader {
+    color: #ccc;
+    font-family: proxmanova;
+    font-size: 14px;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+}
+.du-folinkfirst {
+    padding: 0 0 0 10px;
+}
+
+
+h4.du-flinkind {
+    margin-top: 30px;
+}
+.du-foottetxt {
+    color: #999;
+    font-family: proxmanova;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.du-subarea {
+  border-bottom: 1px solid #4b4b4b;
+}
+.du-fsubscribe {
+    
+    background: #333 none repeat scroll 0 0;
+    
+    color: #999;
+    display: block;
+    float: left;
+    font-family: proxmanova;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: none;
+}
+.du-fsubscribe:focus {
+  background-color: #444;
+}
+.du-fsubbtn {
+    background: #333 ;
+    
+    color: #999;
+    border-bottom:none;
+    border-left:1px solid #4b4b4b;
+    border-right:1px solid #333;
+    border-top:1px solid #333;
+    font-family: proxmanovabold;
+    text-transform: uppercase;
+    padding: 2px 8px;
+}
+.du-fimg {
+    margin-top: 30px;
+}
+
+.du-copyrights {
+  background-color: #212121;
+  display: table;
+  width: 100%;
+  text-align:center;
+}
+.du-copyrights p {
+  color: #646363;
+  padding: 10px;
+  font-family: proxmanova;
+  margin: 0;
+}
+
+/* Listing Page */
+.du-headingposition {
+    position: absolute;
+    padding-left: 20px;
+    width: 100%;
+}
+
+.du-imrelative {
+    position: relative;
+}
+
+.du-breadcrums {
+    margin-top: 10px;
+    color: #ccc;
+    font-style: italic;
+    font-family: 'proxmanovalight', verdana, serif;
+    font-size: 14px;
+    background-color: transparent;
+    padding-left: 0;
+}
+.du-breadcrums .active {
+  color: #ccc;
+}
+.du-breadcrums a {
+  color: #fff;
+}
+p.du-breadcrums a:hover {
+  color: #eee;
+}
+.du-listheading {
+  color: #fff;
+  margin-bottom: 30px;
+}
+.du-breadcrums span::after {
+    content: "/";
+    padding: 5px;
+}
+.du-breadcrums span.du-bclast::after {
+    content: "";
+    padding: 5px;
+}
+.du-listpagination li {
+    float: left;
+}
+
+ul.list-unstyled.du-listpagination {
+    background: url(../images/submenu-bg20.png);
+    overflow: hidden;
+    padding: 0;
+}
+
+.du-listpagination p {
+    margin: 3px 8px 0;
+    color: #ccc;
+}
+
+.du-listpagination li span {
+    color: #fff;
+}
+
+.du-listpagination a {
+    display: block;
+    padding: 3px 5px;
+    border-right: 1px solid #ccc;
+}
+.du-listpagination p span {
+  color: #ccc;
+}
+span.du-premain {
+    padding: 5px;
+}
+.du-listpagination li:last-child a {
+    border-left: 1px solid #ccc;
+    border-right: none;
+}
+/*Detail Page Style*/
+.du-dsharelist li {
+    display: inline-block;
+    padding-right: 15px;
+}
+h3.du-relatedlist {
+    background: #999999;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family:'proxmanova', verdana, serif;
+    margin: 0;
+}
+/*Detail Page Images*/
+/* Indicators list style */
+.dimg-slide .carousel-indicators {
+    bottom: 0;
+    left: 0;
+    margin-left: 5px;
+    width: 100%;
+}
+h4.du-descriptionhead {
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    font-family: proxmanova;
+}
+/* Indicators list style */
+.dimg-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 80px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 90px;
+}
+/* Indicators images style */
+.dimg-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 80px;
+    left: 0;
+    width: 90px;
+}
+/* Indicators active image style */
+.dimg-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
+ul.nav.nav-tabs.du-detailtabsection {
+    border: none;
+    text-align: center;
+}
+li.detailtabicons {
+    padding: 15px 8px 0 8px;
+    border-right: 1px solid #b4b4b0;
+    margin: 10px 0 0 0;
+}
+li.detailtabicons:last-child {
+    border-right: none;
+    padding: 15px 0px 0 15px;
+}
+.du-detailtabsection li a {
+    border: none !important;
+    margin: 0;
+    padding: 0;
+    color: #666;
+    font-size: 12px;
+}
+.du-detailtabsection li a:hover {
+  background: none;
+}
+.du-imdescscroller {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.du-detailtabsection a i {
+    width: 42px;
+    height: 40px;
+    display: block;
+    background: url(../images/detail-page-tabs.png) no-repeat;
+    margin: 0 auto;
+}
+.du-detailtabsection .active a i {
+    background-position: 0 -45px;
+}
+.du-detailtabsection .du-tbmapview a i {
+    background-position: -50px 0;
+}
+.du-detailtabsection .active.du-tbmapview a i {
+    background-position: -50px -45px;
+}
+.du-detailtabsection .du-tbstreetview a i {
+    background-position: -101px 0;
+}
+.du-detailtabsection .active.du-tbstreetview a i {
+    background-position: -101px -45px;
+}
+.du-detailtabsection .du-tbsmenuview a i {
+    background-position: -150px 0;
+}
+.du-detailtabsection .active.du-tbsmenuview a i {
+    background-position: -150px -45px;
+}
+.iframe-rwd  {
+position: relative;
+padding-bottom: 65.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+.iframe-rwd iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+/* Map */
+.dumaparea {
+  height: 150px;
+  overflow: hidden;
+}
+.du-maplong {
+  height: 450px;
+}
+a#du-mpshwmore {
+    position: absolute;
+    /* top: 0; */
+    padding: 5px 50px;
+    background: #fff;
+    left: 50%;
+    bottom: 0;
+}
+a#du-mpshwmore span.du-mprotatearrow {
+  -ms-transform: rotate(deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+@media(max-width:1920px) and (height:1080px) {
+  #adsetarea1 {
+  display: block;
+  }
+  #adsetarea2 {
+  display: block;
+  }
+  #adsetarea3 {
+  display: block;
+  }
+  .du-tweetlinetwo {
+    height: 370px;
+  }
+}
+@media(max-width:1600px) and (height:900px) {
+
+  #adsetarea1 {
+  display: none;
+  }
+  #adsetarea2 {
+  display: block;
+  }
+  .du-tweetlineone {
+    height: 420px;
+  }
+  .du-tweetlinetwo {
+    height: 375px;
+  }
+
+}
+@media(max-width: 1440px) and (height: 900px) {
+
+  #adsetarea1 {
+  display: block;
+  }
+  #adsetarea2 {
+  display: none;
+  }
+  .du-tweetlineone {
+    height: 398px;
+  }
+  .du-tweetlinetwo {
+    height: 350px;
+  }
+
+}
+/*for fix images issue*/
+/*full width container*/
+@media (min-width: 1300px) {
+    .img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1280px) {
+  .du-tweetlineone {
+  height:350px; 
+  background:#f5fafe;
+}
+.du-tweetlinetwo {
+  height:310px; 
+  background:#f5fafe;
+}
+
+/*detail page*/
+li.detailtabicons {
+    padding: 15px 10px 0;
+}
+
+}
+@media (max-width: 1024px) {
+.du-tweetlineone {
+  height:250px; 
+  background:#f5fafe;
+}
+.du-tweetlinetwo {
+  height:235px; 
+  background:#f5fafe;
+}
+.nav-ddmenu li a {
+  font-size: 12px;
+  padding: 20px 8px;
+}
+#adfade6 {
+  display: none;
+}
+
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+.dd-toplist.dd-toptime {
+    width: 30%;
+}
+.dd-toplist.dd-topweather {
+    width: 24%;
+}
+.dd-toplist.dd-topsearch {
+    width: 8%;
+}
+
+.dd-toplist.dd-topapple {
+    display: none;
+}
+.dd-toplist.dd-topgoogle {
+    display: none;
+}
+/*Main Menu*/
+.nav.nav-pills.nav-ddmenu > li {
+    width: 100%;
+}
+.nav.nav-pills.nav-ddmenu.pull-right {
+    margin: 0;
+}
+.nav-ddmenu li a {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 0;
+}
+.nav-ddmenu li a:hover {
+  border-bottom: 1px solid red;
+}
+.menu-large {
+  position: relative !important;
+}
+}
+@media (max-width:420px) {
+
+.dd-toplist.dd-toptime ,
+.dd-toplist.dd-topweather {
+  display: none;
+}
+.dd-toplist.dd-topcurency ,
+.dd-toplist.dd-topevnts {
+  width: 25%;
+}
+.dropdown.dd-toplist.dd-toplogin {
+  width: 30%;
+}
+.dd-toplist.dd-topsearch {
+  width: 20%;
+}
+.du-imlogo {
+  margin: 10px auto;
+}
+
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  width:100%;
+}
+
+.du-attraction .pull-right {
+  float: none !important;
+}
+}

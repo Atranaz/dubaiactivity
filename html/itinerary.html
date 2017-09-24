@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Itinerary - Dubai 247</title>
+
+    <link rel="stylesheet" href="assets/css/animations.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" type="text/css">
+    
+    <!-- <link href="assets/css/skdslider.css" rel="stylesheet"> -->
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="assets/css/home.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+	.hovereffect-one {
+	  width: 100%;
+	  height: 100%;
+	  float: left;
+	  overflow: hidden;
+	  position: relative;
+	  text-align: center;
+	  cursor: default;
+	}
+
+	.hovereffect-one .overlay {
+	  position: absolute;
+	  overflow: hidden;
+	  width: 80%;
+	  height: 80%;
+	  left: 10%;
+	  top: 10%;
+	  /*border-bottom: 1px solid #FFF;
+	  border-top: 1px solid #FFF;*/
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	  transition: opacity 0.35s, transform 0.35s;
+	  -webkit-transform: scale(0,1);
+	  -ms-transform: scale(0,1);
+	  transform: scale(0,1);
+	}
+
+	.hovereffect-one:hover .overlay {
+	  opacity: 1;
+	  filter: alpha(opacity=100);
+	  -webkit-transform: scale(1);
+	  -ms-transform: scale(1);
+	  transform: scale(1);
+	}
+
+	.hovereffect-one img {
+	  display: block;
+	  position: relative;
+	  -webkit-transition: all 0.35s;
+	  transition: all 0.35s;
+	}
+
+	.hovereffect-one:hover img {
+	  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+	  filter: brightness(0.3);
+	  -webkit-filter: brightness(0.3);
+	}
+
+	.hovereffect-one .listdetail {
+	  
+	  position: relative;
+	  font-size: 17px;
+	  background-color: transparent;
+	  color: #FFF;
+	  padding: 1em 0;
+	  opacity: 0;
+	  filter: alpha(opacity=0);
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	  transition: opacity 0.35s, transform 0.35s;
+	  -webkit-transform: translate3d(0,-100%,0);
+	  transform: translate3d(0,-100%,0);
+	}
+
+	.hovereffect-one a, hovereffect p {
+	  color: #FFF;
+	  padding: 1em 0;
+	  opacity: 0;
+	  filter: alpha(opacity=0);
+	  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	  transition: opacity 0.35s, transform 0.35s;
+	  -webkit-transform: translate3d(0,100%,0);
+	  transform: translate3d(0,100%,0);
+	  
+	}
+	.hovereffect-one a:hover {
+		text-decoration: underline;
+	}
+
+	.hovereffect-one:hover a, .hovereffect-one:hover p, .hovereffect-one:hover .listdetail {
+	  opacity: 1;
+	  filter: alpha(opacity=100);
+	  -webkit-transform: translate3d(0,0,0);
+	  transform: translate3d(0,0,0);
+	  font-family: proxmanovalight;
+	  text-align: left;
+	  text-transform: capitalize;
+	}
+	.du-listprice {
+	    bottom: 2px;
+	    color: #fff;
+	    font-family: proxmanova;
+	    font-size: 20px;
+	    position: absolute;
+	    right: 10px;
+	}
+	.du-listcurency {
+	    font-size: 14px;
+	    margin: 0 2px 0 0;
+	}
+	.bootstrap-select .dropdown-menu {
+		background-color: #fff;
+	}
+	.du-playnow {
+	    background: rgba(0, 0, 0, 0) url("assets/images/playme.png") no-repeat scroll 0 0;
+	    display: block;
+	    height: 78px !important;
+	    margin: 60px auto 0;
+	    padding: 9px 0 0 !important;
+	    text-indent: -20000px;
+	    width: 66px !important;
+	}
+
+	/*Listing event Page Style*/
+	.du-calceventheading {
+	    background: #feb913 none repeat scroll 0 0;
+	    color: #fff;
+	    font-family: proxmanova;
+	    margin: 0 0 2px;
+	    padding: 15px 0;
+	    text-align: center;
+	    text-transform: uppercase;
+	}
+	.listing-area .event-list {
+		max-height: 464px;
+		overflow-y:auto;
+		overflow-x:hidden;  
+	}
+ 	.event-list {
+		list-style: none;
+		font-family: 'Lato', sans-serif;
+		margin: 0px;
+		padding: 0px;
+	}
+	.event-list > li {
+		background-color: rgb(255, 255, 255);
+		padding: 0px;
+		margin: 0px 0px 2px;
+	}
+	.event-list > li > time {
+		display: inline-block;
+		width: 100%;
+		color: rgb(255, 255, 255);
+		background-color: rgb(197, 44, 102);
+		padding: 5px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.event-list > li:nth-child(even) > time {
+		background-color: rgb(165, 82, 167);
+	}
+	.event-list > li > time > span {
+		display: none;
+	}
+	.event-list > li > time > .day {
+		display: block;
+		font-size: 56pt;
+		font-weight: 100;
+		line-height: 1;
+	}
+	.event-list > li time > .month {
+		display: block;
+		font-size: 24pt;
+		font-weight: 900;
+		line-height: 1;
+	}
+	.event-list > li > img {
+		width: 100%;
+	}
+	.event-list > li > .info {
+		padding-top: 5px;
+		text-align: center;
+	}
+	.event-list > li > .info > .title {
+		font-size: 17pt;
+		font-weight: 700;
+		margin: 0px;
+	}
+	.event-list > li > .info > .desc {
+		font-size: 13pt;
+		font-weight: 300;
+		margin: 0px;
+	}
+	.event-list > li > .info > ul,
+	.event-list > li > .social > ul {
+		display: table;
+		list-style: none;
+		margin: 10px 0px 0px;
+		padding: 0px;
+		width: 100%;
+		text-align: center;
+	}
+	.event-list > li > .social > ul {
+		margin: 0px;
+	}
+	.event-list > li > .info > ul > li,
+	.event-list > li > .social > ul > li {
+		display: table-cell;
+		cursor: pointer;
+		color: rgb(30, 30, 30);
+		font-size: 11pt;
+		font-weight: 300;
+        padding: 3px 0px;
+	}
+    .event-list > li > .info > ul > li > a {
+		display: block;
+		width: 100%;
+		color: rgb(30, 30, 30);
+		text-decoration: none;
+	} 
+    .event-list > li > .social > ul > li {    
+        padding: 0px;
+    }
+    .event-list > li > .social > ul > li > a {
+        padding: 3px 0px;
+	} 
+	.event-list > li > .info > ul > li:hover,
+	.event-list > li > .social > ul > li:hover {
+		color: rgb(30, 30, 30);
+		background-color: rgb(200, 200, 200);
+	}
+	.facebook a,
+	.twitter a,
+	.google-plus a {
+		display: block;
+		width: 100%;
+		color: rgb(75, 110, 168) !important;
+	}
+	.twitter a {
+		color: rgb(79, 213, 248) !important;
+	}
+	.google-plus a {
+		color: rgb(221, 75, 57) !important;
+	}
+	.facebook:hover a {
+		color: rgb(255, 255, 255) !important;
+		background-color: rgb(75, 110, 168) !important;
+	}
+	.twitter:hover a {
+		color: rgb(255, 255, 255) !important;
+		background-color: rgb(79, 213, 248) !important;
+	}
+	.google-plus:hover a {
+		color: rgb(255, 255, 255) !important;
+		background-color: rgb(221, 75, 57) !important;
+	}
+
+	@media (min-width: 768px) {
+		.event-list > li {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 120px;
+			padding: 0px;
+		}
+		.event-list > li > time,
+		.event-list > li > img  {
+			display: inline-block;
+		}
+		.event-list > li > time,
+		.event-list > li > img {
+			width: 120px;
+			float: left;
+		}
+		.event-list > li > .info {
+			background-color: rgb(245, 245, 245);
+			overflow: hidden;
+		}
+		.event-list > li > time,
+		.event-list > li > img {
+			width: 120px;
+			height: 120px;
+			padding: 0px;
+			margin: 0px;
+		}
+		.event-list > li > .info {
+			position: relative;
+			height: 120px;
+			text-align: left;
+			padding-right: 40px;
+		}	
+		.event-list > li > .info > .title, 
+		.event-list > li > .info > .desc {
+			padding: 0px 10px;
+		}
+		.event-list > li > .info > ul {
+			position: absolute;
+			left: 0px;
+			bottom: 0px;
+		}
+		.event-list > li > .social {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			display: block;
+			width: 40px;
+		}
+        .event-list > li > .social > ul {
+            border-left: 1px solid rgb(230, 230, 230);
+        }
+		.event-list > li > .social > ul > li {			
+			display: block;
+            padding: 0px;
+		}
+		.event-list > li > .social > ul > li > a {
+			display: block;
+			width: 40px;
+			padding: 10px 0px 9px;
+		}
+	}
+
+	/*iternety*/
+	.date-section {
+	    padding: 0 10px;
+	}
+	.du-itinerary { 
+		background-color: #83CBEC;
+		}
+		p.int-text {
+			margin: 0 0 18px;
+		}
+	.itineary-img {
+    	float: left;
+	}
+	.event-list.itinery-list > li {
+			height: 100px;
+		}
+	.event-list.itinery-list > li > .info {
+		height: 100px;
+		background-color: #fff;
+	}
+	.event-list.itinery-list > li > .info:hover {
+		background-color: rgb(245, 245, 245);
+	}
+	.event-list.itinery-list > li > .info > .title , .event-list.itinery-list > li > .info > .title a {
+	    color: #666;
+	    font-family: proxmanova;
+	    font-size: 24px;
+	    margin: 0;
+	    text-transform: uppercase;
+	    font-weight: 300;
+	}
+	.event-list.itinery-list > li > .info > .desc {
+	    color: #666;
+	    font-family: proxmanova;
+	    font-size: 12px;
+	    font-style: italic;
+	    font-weight: 300;
+	    margin: 5px 0 0 0;
+	}
+	.event-list.itinery-list > li > .info > ul > li > a {
+		display: inline;
+	}
+	.int-controls .glyphicon {
+    	font-size: 26px;
+	}
+	.event-list.itinery-list > li > .info > ul > li {
+		padding: 3px 10px;
+    	text-align: left;
+	}
+	.event-list.itinery-list > li > .info > ul > li:hover {
+		background-color: transparent;
+		cursor:auto;
+	}
+	.itmaylike-img {
+		overflow: hidden;
+	}
+	.iti-img{
+		max-width: 105px;
+		max-height: 100px;
+		min-width: 105px;
+		min-height: 100px;
+	}
+
+</style>
+</head>
+<body>
+  <!-- Top Header -->
+<div class="container-fluid du-extoparea">
+
+      <div class="container">
+      <ul class="list-unstyled col-md-12 no-padding">
+        <li class="dd-toplist dd-toptime"><div class="dd-timearea">
+        	<iframe src="http://free.timeanddate.com/clock/i4xif57a/n776/fn14/fs12/fc999/tct/pct/ftb/tt0/tw1/tm1/ts1/tb1" frameborder="0" width="190" height="18" allowTransparency="true"></iframe>
+
+        </div></li>
+        <li class="dd-toplist dd-topweather"><a href="">
+        	<p class="du-temp">+<span>37</span></p>
+        	<img src="assets/images/weather-img.jpg"></a>
+        </li>
+        <li class="dd-toplist dd-topapple"><a data-toggle="modal" data-target="#appComing" title="we are on Apple Download" href="#"><img src="assets/images/mobile-apple.jpg"></a></li>
+        <li class="dd-toplist dd-topgoogle"><a data-toggle="modal" data-target="#appComing" title="we are on GooglePlay" href="#"><img src="assets/images/moobile-andriod.jpg"></a></li>
+        <li class="dd-toplist dd-topcurency"><a data-toggle="modal" data-target="#cuConvertor" title="Convert your Curency" href="#"><img src="assets/images/curreny-img.jpg"></a></li>
+        <li class="dd-toplist dd-topevnts"><a href=""><img src="assets/images/events-img.jpg"></a></li>
+        <li role="presentation" class="dropdown dd-toplist dd-toplogin">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+        <ul class="dropdown-menu dd-droparealogin no-round">
+      		<li><a href="">My Account</a></li>
+      		<li><a href="">Logout</a></li>
+    	</ul>
+        </li>
+        <li class="dd-toplist dd-topsearch">
+        	<a role="button" data-toggle="collapse" href="#dusSarchbox" aria-expanded="false" aria-controls="dusSarchbox" href="#"><img src="assets/images/search-img.jpg"></a></li>
+      </ul>
+      </div>
+    </div>
+    <!-- Search Area for toggle -->
+    <div id="dusSarchbox" class="container-fluid du-extoparea dd-searchbox collapse" >
+		<div class="container">
+			<div class="col-md-11 col-xs-11">
+			<input type="" class="dd-searcharea" placeholder="Enter Your SEarch">
+			
+			</div>
+			<div class="col-md-1 col-xs-1 no-padding">
+			<a class="closeseracharea" role="button" data-toggle="collapse" href="#dusSarchbox" aria-expanded="false" aria-controls="dusSarchbox" href="#">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+			</a>
+			</div>
+			
+		</div>
+	</div>
+
+    <!-- Logo area -->
+    <div class="container-fluid dd-whitebg" data-spy="affix" data-offset-top="50">
+      <div class="container">
+        <div class="col-md-3 ">
+        	<a href=""><img class="du-imlogo" src="assets/images/logo.jpg"></a>
+
+        </div>
+        <div class="col-md-9 ">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			</div>
+          	<div class="navbar-collapse collapse no-padding">
+		        <ul class="nav nav-pills nav-ddmenu pull-right">
+		            <li class="dropdown menu-large">
+		            	<a class="dropdown-toggle" data-toggle="dropdown" href="#">TRANSPORTATION</a>
+						<ul class="dropdown-menu megamenu row">
+						<li>
+						<div class="col-sm-6 col-md-4 no-padding">
+							<div class="panel-group du-submeniabg" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default no-round dd-submenustyle">
+									<div class="panel-heading no-round" role="tab" id="headingOne">
+									  <h4 class="panel-title">
+									    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									      GOVERNMENT TAXI
+									      <span aria-hidden="true" class="glyphicon glyphicon-menu-down pull-right"></span>
+									    </a>
+									  </h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse du-submenulistarea collapse" role="tabpanel" aria-labelledby="headingOne">
+									  <ul class="list-group">
+									      <li class="list-group-item"><a href=""> GOVERNMENT TAXI</a></li>
+									      <li class="list-group-item"><a href="">DUBAI METRO</a></li>
+									      <li class="list-group-item"><a href="">DUBAI BUS</a></li>
+									    </ul>
+									</div>
+								</div>
+								<div class="panel panel-default no-round dd-submenustyle">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								  			DUBAI METRO <span aria-hidden="true" class="glyphicon glyphicon-menu-down pull-right"></span>
+											</a>
+										</h4>
+									</div>
+								<div id="collapseTwo" class="panel-collapse du-submenulistarea collapse" role="tabpanel" aria-labelledby="headingTwo">
+								<ul class="list-group">
+								    <li class="list-group-item"><a href="">GOVERNMENT TAXI </a></li>
+									<li class="list-group-item"><a href="">DUBAI METRO</a></li>
+									<li class="list-group-item"><a href="">DUBAI BUS</a></li>
+									<li class="list-group-item "><a class="red" href="">See more</a></li>
+								</ul>
+								</div>
+								</div>
+								<div class="panel panel-default no-round dd-submenustyle" >
+									<div class="panel-heading" role="tab" id="headingThree">
+									  <h4 class="panel-title">
+									    <a class="collapsed" href="index" >
+									      Dubai Bus
+									    </a>
+									  </h4>
+									</div>
+									<!-- <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+									  <ul class="list-group">
+									      <li class="list-group-item">Bootply</li>
+									      <li class="list-group-item">One itmus ac facilin</li>
+									      <li class="list-group-item">Second eros</li>
+									    </ul>
+									</div> -->
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 no-padding">
+							<div class="du-submenublockarea">
+								<div class="du-featbox pull-right">
+									<a class="du-sunmenublockan" href="">
+									<h3 class="du-menufeathead">Featured</h3>
+									<p class="du-menufeattext">Experience All That’s Possible In Dubai</p>
+									</a>
+								</div>		
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4 no-padding">
+							<div class="du-submenublockarea">
+									<a class="du-sunmenublockan" href="">
+									<img class="du-submenufeatimg" src="assets/images/menu-img.jpg"></a>
+								</div>
+						</div>
+						</li>
+						</ul>
+		            </li>
+		            <li><a href="#">ACCOMMODATION</a></li>
+		            <li><a href="#">THINGS TO DO</a></li>
+		            <li><a href="#">DINING</a></li>
+		            <li><a href="">ATTRACTIONS</a></li>
+		            <li><a href="">DEALS</a></li>
+		            <li><a href="">ESSENTIAL LINKS</a></li>
+		        </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+	<!-- Content Area Start From Here -->
+	<div class="container-fluid no-padding">
+      
+	      <div class="du-contentfullarea animatedParent animateOnce" >
+	      <!-- Listing Area Start From Here -->
+		      <div class="col-md-9 no-padding du-imleftcontent animated fadeInUp">
+		      	<!-- Filter area -->
+		      	<div class="col-md-12 no-padding du-imrelative">
+		      		<div class="margin-right2 margin-bot2">
+		      		<div class="dumaparea">
+		      		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28908.383593522296!2d55.12206049868202!3d25.083306391257725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b5402c126e3%3A0xb9511e6655c46d7c!2sDubai+Marina+-+Dubai+-+United+Arab+Emirates!5e0!3m2!1sen!2s!4v1449036311824" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		      		<a id="du-mpshwmore" class="du-mapless" href="#"><span id="immaparrow" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+		      		</div>
+		      		</div>
+		      	</div>
+
+			    <div class="col-xs-12  col-md-8 no-padding">
+			    	<p class="int-text">Here are the activities, events and experiences you’ve added to your My Trip itinerary. To add more, click the suitcase icon anywhere on the site or select Add Favourites below.</p>
+					<div class="listing-area margin-right2">
+					    
+						<ul class="event-list itinery-list">
+							
+							<li>
+								<div class="itineary-img">
+									<img class="iti-img" src="assets/images/itny-img.jpg">
+								</div>
+								
+								<div class="info">
+
+									<h2 class="title"><a href=""> Dubai Aquarium And Underwater Zoo</a></h2>
+									<p class="desc">
+									<strong><i class="fa fa-map-marker"></i></strong> World Famous Attractions</p>
+									 <ul class="int-controls">
+										<li style="width:10%;"><a href="#delete">
+										<span class="glyphicon glyphicon-edit" aria-hidden="true">
+										</span></a>
+										<a href="#edit">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true">
+											</span></a>
+										</li>
+										<li style="width:20%;">
+											<span><strong>To</strong> <span class='date'>12-09-15</span> </span> / 
+											<span> <strong>From</strong> <span class='date'>22-12-15</span></span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="itineary-img">
+									<img class="iti-img" src="assets/images/itny-img.jpg">
+								</div>
+								
+								<div class="info">
+
+									<h2 class="title">Dubai Aquarium And Underwater Zoo</h2>
+									<p class="desc">
+									<strong><i class="fa fa-map-marker"></i></strong> World Famous Attractions</p>
+									 <ul class="int-controls">
+										<li style="width:10%;"><a href="#delete">
+										<span class="glyphicon glyphicon-edit" aria-hidden="true">
+										</span></a>
+										<a href="#edit">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true">
+											</span></a>
+										</li>
+										<li style="width:20%;">
+											<span><strong>To</strong> <span class='date'>12-09-15</span> </span> / 
+											<span> <strong>From</strong> <span class='date'>22-12-15</span></span>
+										</li>
+										
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="itineary-img">
+									<img class="iti-img" src="assets/images/itny-img.jpg">
+								</div>
+								
+								<div class="info">
+
+									<h2 class="title">Dubai Aquarium And Underwater Zoo</h2>
+									<p class="desc">
+									<strong><i class="fa fa-map-marker"></i></strong> World Famous Attractions</p>
+									 <ul class="int-controls">
+										<li style="width:10%;"><a href="#delete">
+										<span class="glyphicon glyphicon-edit" aria-hidden="true">
+										</span></a>
+										<a href="#edit">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true">
+											</span></a>
+										</li>
+										<li style="width:20%;">
+											<span><strong>To</strong> <span class='date'>12-09-15</span> </span> / 
+											<span> <strong>From</strong> <span class='date'>22-12-15</span></span>
+										</li>
+										
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="itineary-img">
+									<img class="iti-img" src="assets/images/int-side-img.jpg">
+								</div>
+								
+								<div class="info">
+
+									<h2 class="title">Dubai Aquarium And Underwater Zoo</h2>
+									<p class="desc">
+									<strong><i class="fa fa-map-marker"></i></strong> World Famous Attractions</p>
+									 <ul class="int-controls">
+										<li style="width:10%;"><a href="#delete">
+										<span class="glyphicon glyphicon-edit" aria-hidden="true">
+										</span></a>
+										<a href="#edit">
+											<span class="glyphicon glyphicon-trash" aria-hidden="true">
+											</span></a>
+										</li>
+										<li style="width:20%;">
+											<span><strong>To</strong> <span class='date'>12-09-15</span> </span> / 
+											<span> <strong>From</strong> <span class='date'>22-12-15</span></span>
+										</li>
+										
+									</ul>
+								</div>
+							</li>
+							
+						</ul>
+
+					</div>
+				</div>
+				<div class="col-xs-12  col-md-4 no-padding">
+					<div class="margin-right2">
+						<h3 class="du-calceventheading du-itinerary">YOU MAY LIKE THIS</h3>
+						<div class="col-md-12 no-padding">
+				      		<div class="itmaylike-img margin-bot2">
+				      			<div class="hovereffect-one">
+					        		<img class="img-responsive" src="assets/images/int-side-img.jpg">
+					        		<h2 class="du-sbheading"><span>Atlantis</span> The Palm Dubai</h2>
+					        		<p class="du-listprice"><span class="du-listcurency">AED</span>450</p>
+						            <div class="overlay">
+						                <p class="listdetail">Centrally located in Dubai’s bustling  district of Deira, Park Inn by Radisson  Hotel Apartments Al Rigga provides spacious, classy accommodation just a 10-minute walk from Dubai Creek.</p>
+										<p> 
+											<a href="#">MORE DETAILS</a>
+										</p> 
+						            </div>
+		    					</div>
+		    				</div>
+			    		</div>
+			    		<div class="col-md-12 no-padding">
+				      		<div class="itmaylike-img margin-bot2">
+				      			<div class="hovereffect-one">
+					        		<img class="img-responsive" src="assets/images/int-side-img.jpg">
+					        		<h2 class="du-sbheading"><span>Atlantis</span> The Palm Dubai</h2>
+					        		<p class="du-listprice"><span class="du-listcurency">AED</span>450</p>
+						            <div class="overlay">
+						                <p class="listdetail">Centrally located in Dubai’s bustling  district of Deira, Park Inn by Radisson  Hotel Apartments Al Rigga provides spacious, classy accommodation just a 10-minute walk from Dubai Creek.</p>
+										<p> 
+											<a href="#">MORE DETAILS</a>
+										</p> 
+						            </div>
+		    					</div>
+		    				</div>
+			    		</div>
+			    	</div>
+				</div>
+
+			      	
+		      </div>
+
+		      <div id="sidebar" class="col-md-3 no-padding animatedParent animateOnce">
+
+			      	<div class="col-md-12 no-padding animated flipInX">      		
+			      			<div class="du-sideadarea margin-bot2">
+								<div id="adfade" class="carousel slide carousel-fade" data-ride="carousel">
+								<div class="carousel-inner" role="listbox">
+								<div class="active item">
+									<a href=""><img  class="img-responsive" src="assets/images/side-ad-img.jpg"></a>
+								</div>
+								<div class="item">
+									<a href=""><img  class="img-responsive" src="assets/images/side-ad-img-rot.jpg"></a>
+								</div>
+								
+								</div>
+
+								</div>
+
+			      			
+			      			</div>      		
+			      	</div>
+
+			      	<div class="col-md-12 no-padding animated flipInX">
+			      			<div class="du-sideadarea margin-bot2">
+			      			<div id="adfade2" class="carousel slide carousel-fade" data-ride="carousel">
+								<div class="carousel-inner" role="listbox">
+								<div class="active item">
+									<a href=""><img  class="img-responsive" src="assets/images/side-ad-img-1.jpg"></a>
+								</div>
+								<div class="item">
+									<a href=""><img  class="img-responsive" src="assets/images/side-ad-img-1-1.jpg"></a>
+								</div>
+								
+								</div>
+
+								</div>
+			      			</div>
+			      	</div>
+
+			      	<div class="col-md-12 no-padding animated flipInX">      		
+			      			<div class="du-sideadarea margin-bot2">
+								<div id="adfade5" class="carousel slide carousel-fade" data-ride="carousel">
+									<div class="carousel-inner" role="listbox">
+									<div class="active item">
+										<a href=""><img  class="img-responsive" src="assets/images/side-ad-img.jpg"></a>
+									</div>
+									<div class="item">
+										<a href=""><img  class="img-responsive" src="assets/images/side-ad-img-rot.jpg"></a>
+									</div>
+									
+									</div>
+								</div>
+			      			</div>      		
+			      	</div>
+			      	
+		      </div>
+
+	      </div>
+
+    	<div class="clearfix"></div>
+	  	<div class="du-partnetarea">
+	  		<div class="col-md-12 no-padding">
+	  		<div class="dd-partnerimg">
+	  			<img src="assets/images/our-partners-img.jpg">
+	  		</div>
+	  		<div id="myPartners" class="owl-carousel du-mypartnercroll">
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a></div>
+			  <div> <a href=""><img  src="assets/images/partner-2.jpg"></a> </div>
+			  <div> <a href=""><img src="assets/images/partner-3.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-4.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-5.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a></div>
+			  <div> <a href=""><img  src="assets/images/partner-2.jpg"></a> </div>
+			  <div> <a href=""><img src="assets/images/partner-3.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-4.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-5.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a></div>
+			  <div> <a href=""><img  src="assets/images/partner-2.jpg"></a> </div>
+			  <div> <a href=""><img src="assets/images/partner-3.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-4.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-5.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+			  <div> <a href=""><img  src="assets/images/partner-1.jpg"></a> </div>
+			</div>
+	  		</div>
+	  	</div>
+
+    </div>
+
+    <div class="container-fluid no-padding">
+    	<div class="du-footerarea ">
+	    	<div class="col-md-6 no-padding">
+	    		<div class="col-md-3 no-padding">
+	    			<img class="img-responsive" src="assets/images/dubai247-footer-logo.jpg">
+	    			<div class="du-folinkfirst">    			
+  						<h4 class="du-fheader">SiteMap</h4>
+	    				<ul class="list-unstyled du-footerlink">
+	    					<li><a href="">SiteMap</a></li>
+	    				</ul>
+  					</div>
+
+	    		</div>
+	    		<div class="col-md-3">
+	    			<h4 class="du-fheader du-flinkind">Support</h4>
+	    			<ul class="list-unstyled du-footerlink">
+	    				<li><a href="">Help</a></li>
+	    				<li><a href="">Contact us</a></li>
+	    				<li><a href="">Careers</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-md-3">
+	    			<h4 class="du-fheader du-flinkind">Company</h4>
+	    			<ul class="list-unstyled du-footerlink">
+	    				<li><a href="">About us</a></li>
+	    				<li><a href="">Advertising</a></li>
+	    				<li><a href="">our partner</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-md-3">
+	    			<h4 class="du-fheader du-flinkind">&nbsp;</h4>
+	    			<ul class="list-unstyled du-footerlink">
+	    				<li><a href="">Term of Use</a></li>
+	    				<li><a href="">Privacy Policy</a></li>
+	    				<li><a href="">Blog</a></li>
+	    			</ul>
+	    		</div>
+	    	</div>
+	    	<div class="col-md-6 no-padding">
+	    		<div class="col-md-6 no-padding">
+	    			<h4 class="du-fheader du-flinkind">NewsLetter</h4>
+	    			<p class="du-foottetxt">Sign up to our newletter and never miss cool news again.</p>
+	    			<div class="du-subarea">
+	    				<input class="du-fsubscribe col-md-8" type="text" placeholder="Enter Email">
+	    				<input class="du-fsubbtn" type="submit" value="Subscribe" >
+	    			</div>
+	    		</div>
+	    		<div class="col-md-6 no-padding">
+	    			<div class="col-md-4 du-fimg"><img class="img-responsive" src="assets/images/fexpo-img.jpg"></div>
+	    			<div class="col-md-4 du-fimg"><img class="img-responsive" src="assets/images/fmap-bg.jpg"></div>
+	    			<div class="col-md-4 du-fimg"><img class="img-responsive" src="assets/images/fvdo-img.jpg"></div>
+	    		</div>
+	    	
+	    	</div>
+    	</div>
+    	<div class="col-md-12 du-copyrights"><p>© 2015 DUBAI24-7 PROPERTIES. ALL RIGHTS RESERVED.</p></div>
+    </div>
+
+    <!-- All Popup Comes Here -->
+    <!-- Modal -->
+	<div class="modal fade" id="appComing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Mobile Apps</h4>
+	      </div>
+	      <div class="modal-body">
+	        <strong class="info-text">Mobile Apps are Coming Soon !</strong>
+	      </div>
+	      <!-- <div class="modal-footer">
+	        
+	      </div> -->
+	    </div>
+	  </div>
+	</div>
+	<!-- Currency Convertor -->
+	<div class="modal fade" id="cuConvertor" tabindex="-1" role="dialog" aria-labelledby="cuConvertor">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Currency Convertor</h4>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="row row-centered">
+	      	<div class="col-md-10 col-centered">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Amount</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">From</label>
+						<div class="col-sm-10">
+							<select class="form-control">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label">To</label>
+						<div class="col-sm-10">
+							<select class="form-control">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Calculate</button>
+					</div>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Result</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+					</div>
+				</form>
+			</div>
+			</div>
+	      </div>
+	      <!-- <div class="modal-footer">
+	        
+	      </div> -->
+	    </div>
+	  </div>
+	</div>
+
+	<!-- video code -->
+	<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div>
+                    <iframe width="100%" height="350" src=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <script src='assets/js/jquery-1.10.2.min.js'></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src='assets/js/css3-animate-it.js'></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    
+    <script src='assets/js/owl.carousel.js'></script>
+    <script src='assets/js/responsive-calendar.min.js'></script>
+    
+    <!-- 
+	disabled some issue will be fix soon
+	<script type="text/javascript" src="http://leafo.net/sticky-kit/src/jquery.sticky-kit.js"></script>
+    <script src='assets/js/skdslider.min.js'></script> -->
+    <!-- Script to Activate the Carousel -->
+    <script>
+
+    $('.selectpicker').selectpicker({      
+     	 size: 4
+  	});
+    //Mega Menu
+    // Dropdown Menu Fade    
+	jQuery(document).ready(function(){
+	    $(".dropdown").hover(
+	        function() { $('.dropdown-menu', this).stop().fadeIn("fast");
+	        },
+	        function() { $('.dropdown-menu', this).stop().fadeOut("fast");
+	    });
+	});
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
+    $(document).ready(function(){
+	$.doTimeout(2500, function(){
+		$('.repeat.go').removeClass('go');
+
+		return true;
+	});
+	$.doTimeout(2520, function(){
+		$('.repeat').addClass('go');
+		return true;
+	});
+	
+	});
+    //Sticky Sides
+ 	 // $(function() {
+   //  	return $("#sidebar").stick_in_parent({
+   //    	parent: "[data-sticky_parent]"
+   //  	});
+  	// });
+
+
+	//Partner Scroller
+	var owl = $('#myPartners');
+	owl.owlCarousel({
+    items:10,
+    loop:true,
+    margin:50,
+    autoplay:true,
+    autoplayTimeout:1000,
+    slideSpeed:5000,
+    autoplayHoverPause:true
+	});
+
+	//News Ticker
+	 var nt_example1 = $('#nt-example1').newsTicker({
+                row_height: 80,
+                max_rows: 4,
+                duration: 4000,
+            });
+
+	//Side Fade Slider 
+	$('.carousel-fade').carousel();
+
+	//SDK Slider 
+	// jQuery('#demo3').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:false,showPlayButton:false,autoSlide:true,animationType:'fading'});
+	// jQuery('#responsive').change(function(){
+	// 		  $('#responsive_wrapper').width(jQuery(this).val());
+	// 		  $(window).trigger('resize');
+	// 		});
+
+	//YOUTUBE VIDEO 
+	autoPlayYouTubeModal();
+
+  //FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+  function autoPlayYouTubeModal() {
+      var trigger = $("body").find('[data-toggle="modal"]');
+      trigger.click(function () {
+          var theModal = $(this).data("target"),
+              videoSRC = $(this).attr("data-theVideo"),
+              videoSRCauto = videoSRC + "?autoplay=1";
+          $(theModal + ' iframe').attr('src', videoSRCauto);
+          $(theModal + ' button.close').click(function () {
+              $(theModal + ' iframe').attr('src', videoSRC);
+          });
+      });
+  }
+	
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".responsive-calendar").responsiveCalendar({
+          time: '2015-11',
+          // events: {
+          //   "2015-04-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
+          //   "2013-04-26": {"number": 1, "url": "http://w3widgets.com"}, 
+          //   "2013-05-03":{"number": 1}, 
+          //   "2013-06-12": {}}
+        });
+      });
+      /**
+ * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
+ */
+$(function() {
+    function reposition() {
+        var modal = $(this),
+            dialog = modal.find('.modal-dialog');
+        modal.css('display', 'block');
+        
+        // Dividing by two centers the modal exactly, but dividing by three 
+        // or four works better for larger screens.
+        dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+    }
+    // Reposition when a modal is shown
+    $('.modal').on('show.bs.modal', reposition);
+    // Reposition when the window is resized
+    $(window).on('resize', function() {
+        $('.modal:visible').each(reposition);
+    });
+});
+
+$( "#du-mpshwmore" ).click(function() {
+  $( ".dumaparea" ).toggleClass("du-maplong", 1000, "easeOutSine");
+  $( "#immaparrow" ).toggleClass("du-mprotatearrow", 1000, "easeOutSine");
+  
+});
+</script>
+  </body>
+</html>
