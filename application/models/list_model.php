@@ -3,22 +3,54 @@ Class List_model extends CI_Model
 {
 	public function __construct()
     {
-        // $this->load does not exist until after you call this
-        parent::__construct(); // Construct CI's core so that you can use it
-
+        parent::__construct();
         $this->load->database();
     }
 
-    public function AddList($listarray) {
+    public function AddList($listarray, $imgarray) 
+    {
 
         $this->db->trans_start();
         $this->db->insert('tbl_list', $listarray);
-        
+
         $insert_id = $this->db->insert_id();
+        //insert the last insert id in array
+        $imgarray['list_id'] = $insert_id;
+
+        $this->db->insert('tbl_list_imgs', $imgarray);
         
         $this->db->trans_complete();
         
         return $insert_id;
+    }
+
+    function updateList($listarray,$editLid)
+    {
+        $this->db->update('tbl_list', $listarray, "list_id =".$editLid."");
+    }
+
+    function getListing()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_list');
+        $this->db->order_by("created_at", "desc");
+        $this->db->where('is_active', 1);
+
+        $query = $this->db->get();
+        $Listing = $query->result();
+        return $Listing;
+    }
+    function getList($lId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_list');
+        $this->db->order_by("created_at", "desc");
+        $this->db->where('is_active', 1);
+        $this->db->where('list_id', $lId);
+
+        $query = $this->db->get();
+        $List = $query->result();
+        return $List;
     }
     // function requestList($status){
 

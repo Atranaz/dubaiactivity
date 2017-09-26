@@ -60,6 +60,12 @@ $route['cms'] = 'cms/login';
 $route['cms/loginMe'] = 'cms/login/loginMe';
 $route['cms/dashboard'] = 'cms/user';
 $route['cms/logout'] = 'cms/user/logout';
+$route['cms/listing'] = 'cms/offer_list';
+$route['cms/listing/add'] = 'cms/offer_list/newlist';
+$route['cms/list'] = 'cms/offer_list/singleLlist';
+$route['cms/list/(:num)'] = "cms/offer_list/singleList/$1";
+
+// not belong to us right now have to check and refine these
 $route['cms/userListing'] = 'cms/user/userListing';
 $route['cms/userListing/(:num)'] = "cms/user/userListing/$1";
 $route['cms/addNew'] = "cms/user/addNew";

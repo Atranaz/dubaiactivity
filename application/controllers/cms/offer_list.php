@@ -13,25 +13,46 @@ class Offer_list extends BaseController
         $this->load->model('list_model');
     }
     
-    /**
-     * This function used to load the first screen of the user
-     */
     public function index()
     {
         $status = 1;
-        // $result = $this->traveler_model->requestList($status);
-        // $data['travelerlist'] = $result;
-        $result = null;
+        $result = $this->list_model->getListing();
+        //print_r($result);exit();
+        $data['travelerlist'] = $result;
+        // $result = null;
+        // $data['travelerlist'] = null;
+        $this->global['pageTitle'] = 'All Listing';
+        $this->loadViews("cms/listing_view", $this->global, $data , NULL);
+    }
+
+    public function singleList($lId = NULL)
+    {
+        if ($lId != NULL) 
+        {
+            $result = $this->list_model->getList($lId);
+            $data['listData'] = $result;
+            $this->global['pageTitle'] = 'All Listing';
+            $this->loadViews("cms/add_list", $this->global, $data , NULL);
+
+        } else
+        {
+            redirect('cms/listing_view');
+        }
+    }
+
+    public function newList()
+    {
         $data['travelerlist'] = null;
-        $this->global['pageTitle'] = 'Request List';
-        $this->loadViews("cms/add_list", $this->global, $data , NULL);
+        $this->global['pageTitle'] = 'Add New List';
+        $this->loadViews("cms/add_list", $this->global, $data , NULL);   
     }
 
     public function addList()
     {
         //load global
-        $this->load->helper(array('form'));
+        $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+        
 
         //validations of form fields
         $this->form_validation->set_rules('title', 'Title', 'required');
@@ -63,6 +84,11 @@ class Offer_list extends BaseController
             $free = $this->input->post('free');
             $featured = $this->input->post('featured');
 
+            $editLid = $this->input->post('editLid');
+            $new_name = $slug;
+            $imgname = '';
+            $result = '';
+
             if (empty($free)) {
                 
                 $free = 0;
@@ -71,12 +97,61 @@ class Offer_list extends BaseController
                 
                 $featured = 0;
             }
+            // image upload only work if state is new list 
+            // not work in edit
+            if(empty($editLid))
+            {
+                //image uplaod 
+                // having issue with resize also not set the restirction things
+                $config = array(
+                    'upload_path'   => './uploads/',
+                    'allowed_types' => 'gif|jpg|jpeg|png',
+                    'max_size'      => 0,
+                    'file_name'     => $new_name
+                );
+
+                $this->load->library('upload', $config);
+
+                if ( ! $this->upload->do_upload('imgfile'))
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->load->view('cms/add_list', $error);
+                    }
+                    else
+                    {
+                        $imgname = $this->upload->data('file_name');
+                        $imgfpth = $this->upload->data('full_path');
+                        //exit('hi');
+                        // load library
+                        $image = $this->upload->data();
+                        $this->load->library('image_lib');
+                        $configr = array(
+                            'image_library'   => 'gd2',
+                            'source_image' => './uploads/6a7630dad83afb4b91d6d3b6fb2c30bf.jpg',
+                            'maintain_ratio'  => true,
+                            'create_thumb' => TRUE,
+                            'height'  => 163
+                         );
+                        $this->load->library('image_lib', $configr);
+                        if (!$this->image_lib->resize()) {
+                            echo $this->image_lib->display_errors();
+                            
+                        } 
+                    }
+            }
+            
+            
             // create array for insert the data
             $listarray = array('list_title'=>$title, 'list_slug'=>$slug, 'list_desc'=>$description, 'category_id'=>$category, 'type_id'=>$type, 'company_id'=>$company, 'is_active'=>$active, 'is_featured'=>$featured, 'is_free'=>$free, 'price'=>$price, 'created_by'=>$admin, 'update_by'=>$admin, 'created_at'=>$date, 'updated_at'=>$date);
+            $imgarray = array('list_id'=>$listid, 'image_name'=>$imgname, 'isMain'=>1);
 
-            //print_r($listarray);exit();
+            if(empty($editLid))
+            {
+                $result = $this->list_model->addList($listarray,$imgarray);
+            } else {
 
-            $result = $this->list_model->addList($listarray);
+                $result = $this->list_model->updateList($listarray,$editLid);
+            }
             if($result > 0)
             {
                 $this->session->set_flashdata('success', 'Your List is Saved successfully!');
@@ -90,6 +165,8 @@ class Offer_list extends BaseController
         }
 
     }
+
+    
 
     // public function closedReq()
     // {

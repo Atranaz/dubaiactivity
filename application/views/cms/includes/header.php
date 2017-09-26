@@ -14,7 +14,8 @@
     <link href="<?php echo base_url(); ?>assets/cms/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
-    <link href="<?php echo base_url(); ?>assets/cms/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="<?php echo base_url(); ?>assets/cms/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="<?php echo base_url(); ?>assets/cms/dist/css/skins/skin-red.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/cms/dist/css/admin-style.css" rel="stylesheet" type="text/css" />
     <style>
     	.error{
@@ -97,15 +98,15 @@
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>cms/offer_list" >
+              <a href="<?php echo base_url(); ?>cms/listing/add" >
                 <i class="fa fa-list"></i>
-                <span>Add List</span>
+                <span>Add New List</span>
               </a>
             </li>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>cms/travelers" >
+              <a href="<?php echo base_url(); ?>cms/listing" >
                 <i class="fa fa-users"></i>
-                <span>Request Users</span>
+                <span>Listing</span>
               </a>
             </li>
             <li class="treeview">

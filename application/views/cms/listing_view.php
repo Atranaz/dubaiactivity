@@ -4,7 +4,7 @@
     <section class="content-header">
       <h1>
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-        <small>Request List</small>
+        <small>Activity Listing</small>
       </h1>
     </section>
     
@@ -15,9 +15,10 @@
               <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>Request Name</th>
+                      <th>Activity Name</th>
                       <th>Date</th>
-                      <th>Email</th>
+                      <!-- <th>Category</th> -->
+                      <th>Price</th>
                       <th>Options</th>
                     </tr>
                   </thead>
@@ -25,24 +26,28 @@
                   <?php 
 
                     $delLink = '';
-                    $rID = '';
+                    $lID = '';
+                    $catName = '';
 
                     //print_r($travelerlist);
                     $tcount = count($travelerlist);
                     for ($i=0; $i <$tcount ; $i++) { 
 
-                      $status = $travelerlist[$i]->request_status;
+
+
+                      $status = $travelerlist[$i]->is_active;
                       if ($status == 1) {
-                        $delLink = '| <a href="request_list/delRequest/'.$rID.'">delete</a>';
+                        $delLink = '| <a href="request_list/delRequest/'.$lID.'">delete</a>';
                       }
                 
-                      $rID = $travelerlist[$i]->request_id;
+                      $lID = $travelerlist[$i]->list_id;
                       $body = '';
                       $body .= '<tr>';
-                      $body .= '<td><a href="request/'.$rID.'">'.$travelerlist[$i]->destination.'</a></td>';
-                      $body .= '<td>'.$travelerlist[$i]->date_created.'</td>';      
-                      $body .= '<td>'.$travelerlist[$i]->email.'</td>';      
-                      $body .= '<td><a href="request/'.$rID.'">view</a>   '.$delLink.' </td> </tr>'; 
+                      $body .= '<td><a href="list/'.$lID.'">'.$travelerlist[$i]->list_title.'</a></td>';
+                      $body .= '<td>'.$travelerlist[$i]->created_at.'</td>'; 
+                      // $body .= '<td>'.$travelerlist[$i]->category_id.'</td>';     
+                      $body .= '<td>'.$travelerlist[$i]->price.'</td>';      
+                      $body .= '<td><a href="list/'.$lID.'">view</a>   '.$delLink.' </td> </tr>'; 
 
                       print_r($body);     
                     }

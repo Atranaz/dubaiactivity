@@ -2,9 +2,9 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Yasalem</b> Admin System | Version 1.0
+          <b>UAEACTIVITY</b> CMS | Version 1.0
         </div>
-        <strong>Copyright &copy; 2017 <a href="<?php echo base_url(); ?>">Yasalem.net</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2017 <a href="<?php echo base_url(); ?>">UAEACTIVITY.ae</a>.</strong> All rights reserved.
     </footer>
     
     <!-- jQuery UI 1.11.2 -->

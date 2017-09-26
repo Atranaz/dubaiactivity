@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <!-- <div class="small-box bg-aqua">
                 <div class="inner">
                   <h3>View</h3>
                   <p>Number of Trips</p>
@@ -20,11 +20,11 @@
                   <i class="ion ion-android-plane"></i>
                 </div>
                 <a href="<?php echo base_url(); ?>cms/request_list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
+              </div> -->
             </div><!-- ./col -->
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green">
+              <!-- <div class="small-box bg-green">
                 <div class="inner">
                   <h3>View<sup style="font-size: 20px"></sup></h3>
                   <p>Number of Users</p>
@@ -33,13 +33,13 @@
                   <i class="ion ion-android-people"></i>
                 </div>
                 <a href="<?php echo base_url(); ?>cms/travelers" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
+              </div> -->
             </div><!-- ./col -->
            <?Php if($role == 1 || $role == 3)
             { ?>
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-yellow">
+              <!-- <div class="small-box bg-yellow">
                 <div class="inner">
                   <h3>View </h3>
                   <p>Closed Trips</p>
@@ -48,7 +48,7 @@
                   <i class="ion ion-close-circled"></i>
                 </div>
                 <a href="<?php echo base_url(); ?>cms/closed_request" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
+              </div> -->
             </div><!-- ./col -->
             <?php } ?>
             <!-- <div class="col-lg-3 col-xs-6"> -->
