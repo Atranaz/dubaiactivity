@@ -64,6 +64,19 @@ a {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: proxmanova;
 }
+.btn-default {
+  border-radius: 0;
+  text-transform: uppercase;
+  background: #00ccea;
+  border-color: #00ccea;
+  color: #fff;
+  font-family: 'proxmanovalight', verdana , serif;
+}
+.btn-default:hover {
+  background: #fff;
+  color:#00ccea;
+  border-color: #00ccea;
+}
 
  body {
   overflow-x: hidden;

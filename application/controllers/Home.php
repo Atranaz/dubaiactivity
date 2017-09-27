@@ -20,8 +20,8 @@ class Home extends CI_Controller {
 		$this->load->view('global/footer');
 	}
 
-	public function listdetail($slug)
-	{
+	// public function listdetail($slug)
+	// {
 		
-	}
+	// }
 }
