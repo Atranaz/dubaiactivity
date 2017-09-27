@@ -35,12 +35,10 @@
 
 
 
-                      $status = $travelerlist[$i]->is_active;
-                      if ($status == 1) {
-                        $delLink = '| <a href="request_list/delRequest/'.$lID.'">delete</a>';
-                      }
-                
                       $lID = $travelerlist[$i]->list_id;
+                    
+                      $delLink = '| <a href="listing/delete/'.$lID.'">delete</a>';
+                    
                       $body = '';
                       $body .= '<tr>';
                       $body .= '<td><a href="list/'.$lID.'">'.$travelerlist[$i]->list_title.'</a></td>';

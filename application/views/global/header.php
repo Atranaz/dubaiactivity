@@ -9,12 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>UAE ACTIVITY</title>
 
-    <link rel="stylesheet" href="assets/css/animations.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/animations.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/owl.carousel.css" type="text/css">
     <!-- <link href="assets/css/skdslider.css" rel="stylesheet"> -->
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/home.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/home.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
     

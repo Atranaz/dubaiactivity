@@ -695,8 +695,8 @@ p.overlay-text {
 }*/
 
 .hovereffect h2 {
-   font-family: proxmanova;
-    font-size: 26px;
+   font-family: proxmanovabold;
+    font-size: 14px;
     margin-bottom: 0;
     margin-top: 65px;
     padding: 10px;
@@ -1067,21 +1067,20 @@ now override the 3.3 new styles for modern browsers & apply opacity
   padding: 0 0 10px;
 }
 .du-footerlink a {
-    color: #999;
+    color: #fff;
     font-family: proxmanova;
     font-size: 12px;
     letter-spacing: 0;
     text-transform: uppercase;
+    padding: 0px 0 0 5px;
 }
-.du-footerlink a::before {
-    content: ">";
-    font-family: proxmanova;
-    margin-right: 4px;
+.du-footerlink li {
+    padding: 0 0 5px 0;
 }
 h4.du-fheader {
     color: #ccc;
-    font-family: proxmanova;
-    font-size: 14px;
+    font-family: proxmanovabold;
+    font-size: 16px;
     margin: 10px 0 5px;
     text-transform: uppercase;
 }

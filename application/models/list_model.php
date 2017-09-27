@@ -7,6 +7,31 @@ Class List_model extends CI_Model
         $this->load->database();
     }
 
+    function getListing()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_list');
+        $this->db->order_by("created_at", "desc");
+        $this->db->where('is_active', 1);
+
+        $query = $this->db->get();
+        $Listing = $query->result();
+        return $Listing;
+    }
+    function getList($lId)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_list AS tbl');
+        $this->db->join('tbl_list_imgs AS tli', 'tbl.list_id = tli.list_id', 'INNER');
+        $this->db->order_by("created_at", "desc");
+        $this->db->where('is_active', 1);
+        $this->db->where('tbl.list_id', $lId);
+
+        $query = $this->db->get();
+        $List = $query->result();
+        return $List;
+    }
+
     public function AddList($listarray, $imgarray) 
     {
 
@@ -29,29 +54,22 @@ Class List_model extends CI_Model
         $this->db->update('tbl_list', $listarray, "list_id =".$editLid."");
     }
 
-    function getListing()
+    function changeImg($imgarray,$editLid)
     {
-        $this->db->select('*');
-        $this->db->from('tbl_list');
-        $this->db->order_by("created_at", "desc");
-        $this->db->where('is_active', 1);
+        $this->db->update('tbl_list_imgs', $imgarray, "list_id =".$editLid."");
 
-        $query = $this->db->get();
-        $Listing = $query->result();
-        return $Listing;
+        return true;
     }
-    function getList($lId)
+
+    function delList($lID,$status_array)
     {
-        $this->db->select('*');
-        $this->db->from('tbl_list');
-        $this->db->order_by("created_at", "desc");
-        $this->db->where('is_active', 1);
-        $this->db->where('list_id', $lId);
+        $this->db->where('list_id', $lID);
+        $this->db->update('tbl_list', $status_array);
 
-        $query = $this->db->get();
-        $List = $query->result();
-        return $List;
+        return true;
     }
+
+    
     // function requestList($status){
 
     // 	$this->db->select('*');

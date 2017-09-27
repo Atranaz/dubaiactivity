@@ -107,7 +107,7 @@ class Offer_list extends BaseController
                     'upload_path'   => './uploads/',
                     'allowed_types' => 'gif|jpg|jpeg|png',
                     'max_size'      => 0,
-                    'file_name'     => $new_name
+                    'encrypt_name'     => true
                 );
 
                 $this->load->library('upload', $config);
@@ -121,7 +121,6 @@ class Offer_list extends BaseController
                     {
                         $imgname = $this->upload->data('file_name');
                         $imgfpth = $this->upload->data('full_path');
-                        //exit('hi');
                         // load library
                         $image = $this->upload->data();
                         $this->load->library('image_lib');
@@ -160,9 +159,93 @@ class Offer_list extends BaseController
             {
                 $this->session->set_flashdata('error', 'Having Issue kindly contact administrator');
             }            
-            redirect('cms/offer_list');
+            redirect('cms/listing');
 
         }
+
+    }
+
+    public function changeImg()
+    {
+        $this->load->helper(array('form', 'url'));
+
+        $editLid = $this->input->post('editLid');
+        $OimgName = $this->input->post('OimgName');
+
+        //image uplaod 
+        // having issue with resize also not set the restirction things
+        $config = array(
+            'upload_path'   => './uploads/',
+            'allowed_types' => 'gif|jpg|jpeg|png',
+            'max_size'      => 0,
+            'encrypt_name'     => true
+            );
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('imgfile'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('cms/add_list', $error);
+            }
+            else
+            {
+                
+                unlink("./uploads/".$OimgName);
+                $imgname = $this->upload->data('file_name');
+                $imgfpth = $this->upload->data('full_path');
+                // load library
+                $image = $this->upload->data();
+                $this->load->library('image_lib');
+                $configr = array(
+                    'image_library'   => 'gd2',
+                    'source_image' => $imgfpth,
+                    'maintain_ratio'  => true,
+                    'create_thumb' => TRUE,
+                    'height'  => 163
+                 );
+                $this->load->library('image_lib', $configr);
+                if (!$this->image_lib->resize()) {
+                    echo $this->image_lib->display_errors();
+                    
+                } 
+            }
+
+        $imgarray = array('list_id'=>$editLid, 'image_name'=>$imgname, 'isMain'=>1);
+
+        $result = $this->list_model->changeImg($imgarray,$editLid);
+
+        if($result > 0)
+            {
+                $this->session->set_flashdata('success', 'Your List is Saved successfully!');
+            }
+            else
+            {
+                $this->session->set_flashdata('error', 'Having Issue kindly contact administrator');
+            } 
+        redirect('cms/list/'.$editLid, 'refresh');        
+    }
+
+    public function delList($lID)
+    {
+        $status_array = array();
+        $status = 0;
+        $status_array = array(
+        'is_active'=>$status,
+        'updated_at'=>date('Y-m-d H:i:s')
+        );
+
+        $result = $this->list_model->delList($lID,$status_array);
+
+        if($result > 0)
+        {
+            $this->session->set_flashdata('success', 'Your List is Delete successfully!');
+        }
+        else
+        {
+            $this->session->set_flashdata('error', 'Having Issue kindly contact administrator');
+        }
+        redirect('cms/listing');
 
     }
 

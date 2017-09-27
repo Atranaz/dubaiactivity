@@ -12,9 +12,16 @@ class Home extends CI_Controller {
 	{
 		
 		$result = $this->home_model->featListing();
+		$data['featlist'] = $result;
+		$this->global['pageTitle'] = 'Welcome to UAE ACTIVITY';
 		$this->load->view('global/header');
 		$this->load->view('global/mainmenu');
-		$this->load->view('home_message');
+		$this->load->view('home_message', $data );
 		$this->load->view('global/footer');
+	}
+
+	public function listdetail($slug)
+	{
+		
 	}
 }

@@ -55,6 +55,9 @@ $route['translate_uri_dashes'] = TRUE;
 
 $route['detailpage'] = 'detailpage';
 
+// FOR FRONT SIDE
+$route['detailpage/(:any)'] = "detailpage/index/$1";
+
  // FOR ADMIN SIDE
 $route['cms'] = 'cms/login';
 $route['cms/loginMe'] = 'cms/login/loginMe';
@@ -64,6 +67,8 @@ $route['cms/listing'] = 'cms/offer_list';
 $route['cms/listing/add'] = 'cms/offer_list/newlist';
 $route['cms/list'] = 'cms/offer_list/singleLlist';
 $route['cms/list/(:num)'] = "cms/offer_list/singleList/$1";
+$route['cms/listing/delete'] = 'cms/offer_list/delList';
+$route['cms/listing/delete/(:num)'] = "cms/offer_list/delList/$1";
 
 // not belong to us right now have to check and refine these
 $route['cms/userListing'] = 'cms/user/userListing';

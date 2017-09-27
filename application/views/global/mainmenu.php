@@ -2,7 +2,7 @@
     <div class="container-fluid dd-whitebg" data-spy="affix" data-offset-top="50">
       <div class="container">
         <div class="col-md-3 ">
-        	<a href=""><img class="du-imlogo" src="assets/images/logo.png"></a>
+        	<a href="<?php echo base_url(); ?>"><img class="du-imlogo" src="<?php echo base_url(); ?>assets/images/logo.png"></a>
 
         </div>
         <div class="col-md-9 ">

@@ -1,12 +1,12 @@
 <div class="container-fluid no-padding">
-	<section class="b-pic b-pic--place lazy b-parallax  my_place_image_1" data-type="background" data-speed="8" style="background-image: url(&quot;https://assets.fastcompany.com/image/upload/w_1280,f_auto,q_auto,fl_lossy/fc/3064194-poster-p-1-the-worlds-youngest-rainforest-is-growing-up-in-dubai.jpg&quot;);">
+	<section class="b-pic b-pic--place lazy b-parallax  my_place_image_1" data-type="background" data-speed="8" style="background-image: url(&quot;<?php echo base_url().'uploads/'.$singlelist[0]->image_name;  ?>&quot;);">
   
 	    <div class="container b-pic-hgroup lazy-cont">
-	        <h1 class="b-pic__title">Tour to Dubai Rainforest</h1>
+	        <h1 class="b-pic__title"><?php echo $singlelist[0]->list_title;  ?></h1>
 	       
 
 	        <div class="desciption">
-				A DESTINATION RESTAURANT IN THE HEART OF ST. JAMES'S            <a href="#" class="noajax">Read More</a>
+				<?php echo $singlelist[0]->list_desc;  ?>            <a href="#" class="noajax">Read More</a>
 
 				        </div>
 	    </div>
@@ -21,7 +21,7 @@
 
                 <div class="press--right">
 
-                    <span class="address-value">600 AED</span>
+                    <span class="address-value"><?php echo $singlelist[0]->price;  ?>  AED</span>
 
                     <!-- &euro;41 -&euro;59 -->
 
@@ -78,11 +78,9 @@
 					</li>
 				</ul>
 				<div class="white-bg detail-text" " >
+					<?php print_r($singlelist); ?>
 					<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque corporis fuga id incidunt. Dicta hic officiis reprehenderit rerum ullam vel.
-					</p>
-
-					<p>Autem debitis illum inventore maxime modi nemo, quas sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque corporis fuga id incidunt. Dicta hic officiis reprehenderit rerum ullam vel. Autem debitis illum inventore maxime modi nemo, quas sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque corporis fuga id incidunt.</p>
+					<?php echo $singlelist[0]->list_desc;  ?> </p>
 				</div>
 				<div class="gallery" id="detailtext"></div>
 			</div>

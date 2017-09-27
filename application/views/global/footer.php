@@ -1,13 +1,46 @@
+   <div class="container-fluid no-padding">
+      <div class="du-footerarea ">
+        
+          <div class="container">
+              <div class="col-md-4">
+                <h4 class="du-fheader du-flinkind">Support</h4>
+                <ul class="list-unstyled du-footerlink">
+                  <li><a href="">Help</a></li>
+                  <li><a href="">Contact us</a></li>
+                  <li><a href="">Careers</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h4 class="du-fheader du-flinkind">Company</h4>
+                <ul class="list-unstyled du-footerlink">
+                  <li><a href="">About us</a></li>
+                  <li><a href="">Advertising</a></li>
+                  <li><a href="">our partner</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h4 class="du-fheader du-flinkind">Legal</h4>
+                <ul class="list-unstyled du-footerlink">
+                  <li><a href="">Term of Use</a></li>
+                  <li><a href="">Privacy Policy</a></li>
+                  <li><a href="">Blog</a></li>
+                </ul>
+              </div>
+          </div>
+       
+      </div>
+      <div class="col-md-12 du-copyrights"><p>© UAE ACTIVITY. ALL RIGHTS RESERVED.</p></div>
+    </div>
   </body>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <script src='assets/js/jquery-1.10.2.min.js'></script>
+    <script src='<?php echo base_url(); ?>assets/js/jquery-1.10.2.min.js'></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src='assets/js/css3-animate-it.js'></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src='assets/js/jquery.newsTicker.min.js'></script>
-    <script src='assets/js/owl.carousel.js'></script>
-    <script src='assets/js/responsive-calendar.min.js'></script>
+    <script src='<?php echo base_url(); ?>assets/js/css3-animate-it.js'></script>
+    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+    <script src='<?php echo base_url(); ?>assets/js/jquery.newsTicker.min.js'></script>
+    <script src='<?php echo base_url(); ?>assets/js/owl.carousel.js'></script>
+    <script src='<?php echo base_url(); ?>assets/js/responsive-calendar.min.js'></script>
     
     <!-- 
 	disabled some issue will be fix soon
