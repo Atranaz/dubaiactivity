@@ -147,6 +147,9 @@ a.du-callink {
     height: 100%;
     z-index: 9;
 }
+.alert {
+    border-radius: 1px;
+}
 /*Home Page*/
 .du-extoparea {
 	background-color: #f1f1f1;
@@ -1087,6 +1090,9 @@ now override the 3.3 new styles for modern browsers & apply opacity
     text-transform: uppercase;
     padding: 0px 0 0 5px;
 }
+.du-footerlink a:hover {
+  color: #999;
+}
 .du-footerlink li {
     padding: 0 0 5px 0;
 }
@@ -1375,6 +1381,64 @@ a#du-mpshwmore span.du-mprotatearrow {
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);
 }
+
+/* LOGIN PAGE STYLE
+  Please sprate this css from here */
+.loginform {
+  margin-top: 20px;
+}
+.full-image {
+    background: #ccc;
+    height: 300px;
+}
+.login-area {
+  width: 300px;
+  margin:0 auto;
+}
+.form-group label {
+    text-transform: uppercase;
+    font-family: 'proxmanovalight',verdana, serif;
+    margin: 0 0 0 0;
+    color: #444;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: 0 0 0 #ccc;
+}
+.seprator-log {
+  display: block;
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+/* LOGIN STYLE ENDS */
+
+/* User Account Page */
+.user-account {
+    border-radius: 0;
+    margin-top: 40px;
+}
+.user-account.user-last {
+    margin-bottom: 40px;
+}
+.userimg img {
+  margin-top: -80px;
+}
+.user-account .panel-heading {
+    padding: 12px 20px;
+    font-size: 20px;
+    font-family: 'proxmanovalight', verdana, serif;
+}
+.user-account .panel-body {
+  padding: 30px;
+}
+
+/* User Account Ends HERe */
+
+
+/* Responsive Work Start From Here
+Common CSS go above from here */
 @media(max-width:1920px) and (height:1080px) {
   #adsetarea1 {
   display: block;

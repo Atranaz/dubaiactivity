@@ -21,7 +21,6 @@ class Login_model extends CI_Model
         $user = $query->result();
         
         if(!empty($user)){
-            //(password_verify('rasmuslerdorf', $hash))
             if(password_verify($password, $user[0]->password)){
                 return $user;
             } else {
