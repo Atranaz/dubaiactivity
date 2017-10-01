@@ -8,6 +8,8 @@ class User extends CI_Controller {
         parent::__construct();
         $this->load->model('fuser_model');
         $this->load->library('session');
+        $this->load->helper('form');
+        date_default_timezone_set('Asia/Dubai');
         
     }
     // main user area
@@ -21,20 +23,15 @@ class User extends CI_Controller {
     function isLoggedIn()
     {
         
-        
-
         $isLoggedIn = $this->session->userdata('isLoggedIn');
         $uID = $this->session->userdata('userId');
   		
-        
         if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        {
-           
+        { 
             redirect('user/login');
         }
         else
         {
-
 
         $result = $this->fuser_model->userDetail($uID);
         $data['user'] = $result;
@@ -53,7 +50,7 @@ class User extends CI_Controller {
     	if ($isLoggedIn > 0) {
     		redirect('user');
     	} else {
-    		$this->load->helper('form');
+    		
     	$this->load->view('global/header');
 		$this->load->view('global/mainmenu');
 		$this->load->view('login_view');
@@ -83,11 +80,8 @@ class User extends CI_Controller {
                 {
                     $sessionArray = array('userId'=>$res->userID,                    
                                             'role'=>$res->roleId,
-                                            'roleText'=>$res->role,
                                             'name'=>$res->name,
                                             'email'=>$res->email,
-                                            'mobile'=>$res->mobile,
-                                            'country'=>$res->country,
                                             'isLoggedIn' => TRUE
                                     );
                                     
@@ -132,14 +126,15 @@ class User extends CI_Controller {
     	$this->load->library('form_validation');
             
             $this->form_validation->set_rules('name','Full Name','trim|required');
-            $this->form_validation->set_rules('email','Email','trim|required|is_unique[tbl_fusers.email]|valid_email');
+            $this->form_validation->set_rules('email','Email','trim|required|valid_email');
             $this->form_validation->set_rules('password','Password','required|max_length[20]');
             $this->form_validation->set_rules('mobile','Mobile Number','required');
 
         if($this->form_validation->run() == FALSE)
         {
         	
-        	$this->register();
+        	$this->session->set_flashdata('error', 'Form Validation error must contact with administartor');
+                redirect('user/register');
 
         }
         else
@@ -152,36 +147,142 @@ class User extends CI_Controller {
             $roleId = '2';
             $createdBy = '11';
 
-            $userInfo = array('email'=>$email, 'password'=>password_hash($password, PASSWORD_DEFAULT), 'name'=> $name,'mobile'=>$mobile, 'country'=>$country, 'roleId'=>$roleId, 'createBy'=>$createdBy, 'createat'=>date('Y-m-d H:i:s'));
+            $chkEmail = $this->fuser_model->checkEmail($email);
 
-            $result = $this->fuser_model->register($userInfo);
+            if (!empty($chkEmail)) {
+                $this->session->set_flashdata('error', 'This E-mail address is already exists :)');
+                redirect('user/register');
+            } else 
+            {
+                
+                $userInfo = array('email'=>$email, 'password'=>password_hash($password, PASSWORD_DEFAULT), 'name'=> $name,'mobile'=>$mobile, 'country'=>$country, 'roleId'=>$roleId, 'createBy'=>$createdBy, 'createat'=>date('Y-m-d H:i:s'));
 
-            if($result > 0)
-                {
-                    $this->session->set_flashdata('success', 'Thanks for joining us - Sig In');
-                    redirect('user');
-                }
-                else
-                {
-                    $this->session->set_flashdata('error', 'Ops, Having some issue try once again or contact us!');
-                    $this->register();
-                }
+                $result = $this->fuser_model->register($userInfo);
+
+                if($result > 0)
+                    {
+                        $this->session->set_flashdata('success', 'Thanks for joining us - Sig In');
+                        redirect('user');
+                    }
+                    else
+                    {
+                        $this->session->set_flashdata('error', 'Ops, Having some issue try once again or contact us!');
+                        redirect('user/register');
+                    }
+
+            }
+
+            
                 
                 
         }
     }
 
-    function passwordUpdate(){
-
+    function passwordUpdate()
+    {
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('old-password','Old password','required|max_length[20]');
+        $this->form_validation->set_rules('new-password','New password','required|max_length[20]');
+        
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->session->set_flashdata('Validation Issues', 'From validation issues contact with administrator');
+                redirect('user');
+        }
+        else
+        {
+            $oldPassword = $this->input->post('old-password');
+            $newPassword = $this->input->post('new-password');
+            $userId = $this->input->post('uID');
+            
+            $resultPas = $this->fuser_model->matchOldPassword($userId, $oldPassword);
+            
+            if(empty($resultPas))
+            {
+                $this->session->set_flashdata('nomatch', 'Your old password not correct');
+                redirect('user');
+            }
+            else
+            {
+                $usersData = array('password'=>password_hash($newPassword, PASSWORD_DEFAULT), 'updateBy'=>$userId, 'updateAt'=>date('Y-m-d H:i:s'));
+                
+                $result = $this->fuser_model->changePassword($userId, $usersData);
+                
+                if($result > 0) { $this->session->set_flashdata('success', 'Password updation successful'); }
+                else { $this->session->set_flashdata('error', 'Password updation failed'); }
+                
+                redirect('user');
+            }
+        }
     }
 
-    function resetPassword(){
+    function resetPassword()
+    {
 
+        $this->load->view('global/header');
+        $this->load->view('global/mainmenu');
+        $this->load->view('reset_view');
+        $this->load->view('global/footer'); 
     }
 
     function resetPasswordnow(){
 
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->user();
+        } else 
+        {
+            $email = $this->input->post('email');
+            $chkEmail = $this->fuser_model->checkEmail($email);
+        }
+
+        if (empty($chkEmail)) 
+        {
+            $this->session->set_flashdata('error', 'This E-mail address is not exists :)');
+            redirect('user/resetPassword');
+        } else 
+        {
+            
+            
+            $temppass = $this->getRandomWord();
+            $usersData = array('password'=>password_hash($temppass, PASSWORD_DEFAULT), 'updateAt'=>date('Y-m-d H:i:s'));
+
+            $result = $this->fuser_model->resetPaasword($usersData, $email);
+
+            if (empty($result)) {
+                    $this->session->set_flashdata('error', 'Some error contact to administrator');
+                    redirect('user/resetPassword');
+            } else 
+            {
+                $this->session->set_flashdata('success', 'Check email for temporay password');
+
+                $this->load->library('email');
+
+                $this->email->from('atranaz@live.com', 'Zaheer Ahmad');
+                $this->email->to('zaheerahmad.ae@gmail.com');
+                //$this->email->cc('another@another-example.com');
+                //$this->email->bcc('them@their-example.com');
+
+                $this->email->subject('Your Password');
+                $this->email->message('Testing the email class.'.$temppass);
+
+                $this->email->send();
+
+                redirect('user/resetPassword');
+            }
+        }
+
     }
+
+    function getRandomWord($len = 10) {
+        $word = array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9));
+        shuffle($word);
+        return substr(implode($word), 0, $len);
+}
 
 
 

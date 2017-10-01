@@ -13,6 +13,7 @@
 			</div>
 
 			<div class="col-md-12">
+				<?php $this->load->view('global/alert_msg'); ?>
 				<div class="panel panel-default user-account personal-details">
 					<div class="panel-heading">Personal Details</div>
 					<div class="panel-body">
@@ -55,7 +56,9 @@
 				<div class="panel panel-default user-account change-password">
 					<div class="panel-heading">Change Password</div>
 					<div class="panel-body">
-						<form class="form-horizontal">
+						<?php 
+							echo form_open('user/passwordUpdate' , 'class="form-horizontal" id="updatePassword"'); 
+						?>
 							<div class="form-group">
 								<label class="control-label col-sm-3" for="old-password">Old Password:</label>
 								<div class="col-sm-8">
@@ -66,6 +69,7 @@
 								<label class="control-label col-sm-3" for="new-password">New Password:</label>
 								<div class="col-sm-8">
 									<input type="password" class="form-control" id="new-password" name="new-password" >
+									<input type="hidden" name="uID" readonly="" value="<?php echo $user[0]->userID ?>">
 								</div>
 							</div>
 							

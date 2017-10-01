@@ -42,10 +42,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
        
       
         <li role="presentation" class="dropdown dd-toplist dd-toplogin pull-right">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo base_url().'user' ?>" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
         <ul class="dropdown-menu dd-droparealogin no-round">
-      		<!-- <li><a href="">My Account</a></li> -->
-      		<li><a href="">Logout</a></li>
+      		<li><a href="<?php echo base_url().'user' ?>">My Account</a></li>
+          <?php
+          $isLoggedIn = $this->session->userdata('isLoggedIn');
+          if (empty($isLoggedIn)) {
+             echo '<li><a href="'.base_url().'user/login">Sign In</a></li>';
+           } else {
+            echo '<li><a href="'.base_url().'user/logout">Sign Out</a></li>';
+           } ?>
+      		
     	  </ul>
         </li>
         <li class="dd-toplist dd-topsearch pull-right">
