@@ -1388,7 +1388,7 @@ a#du-mpshwmore span.du-mprotatearrow {
   margin-top: 20px;
 }
 .full-image {
-    background: #ccc;
+    background: url(../images/girl-511880_1920.jpg) no-repeat #ccc;
     height: 300px;
 }
 .login-area {
