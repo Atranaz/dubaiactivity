@@ -81,68 +81,17 @@
   	// });
 
 
-	//Partner Scroller
-	var owl = $('#myPartners');
-	owl.owlCarousel({
-    items:10,
-    loop:true,
-    margin:50,
-    autoplay:true,
-    autoplayTimeout:1000,
-    slideSpeed:5000,
-    autoplayHoverPause:true
-	});
+	
 
-	//News Ticker
-	 var nt_example1 = $('#nt-example1').newsTicker({
-                row_height: 80,
-                max_rows: 4,
-                duration: 4000,
-            });
+	
 
 	//Side Fade Slider 
 	$('.carousel-fade').carousel();
 
-	//SDK Slider 
-	// jQuery('#demo3').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:false,showPlayButton:false,autoSlide:true,animationType:'fading'});
-	// jQuery('#responsive').change(function(){
-	// 		  $('#responsive_wrapper').width(jQuery(this).val());
-	// 		  $(window).trigger('resize');
-	// 		});
+	
 	
     </script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $(".responsive-calendar").responsiveCalendar({
-          time: '2015-11',
-          // events: {
-          //   "2015-04-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
-          //   "2013-04-26": {"number": 1, "url": "http://w3widgets.com"}, 
-          //   "2013-05-03":{"number": 1}, 
-          //   "2013-06-12": {}}
-        });
-      });
-      /**
- * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
- */
-$(function() {
-    function reposition() {
-        var modal = $(this),
-            dialog = modal.find('.modal-dialog');
-        modal.css('display', 'block');
-        
-        // Dividing by two centers the modal exactly, but dividing by three 
-        // or four works better for larger screens.
-        dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
-    }
-    // Reposition when a modal is shown
-    $('.modal').on('show.bs.modal', reposition);
-    // Reposition when the window is resized
-    $(window).on('resize', function() {
-        $('.modal:visible').each(reposition);
-    });
-});
-</script>
+   
     <!-- detail pge jump to text -->
     <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBCoKXMcfZfqzAzMD4M2xK2i4-cXkBBzic&sensor=false'></script>
  
@@ -153,15 +102,16 @@ $(function() {
         $('html, body').stop().animate({scrollTop: slideheight}, 1300);
     });
 
-    // Google responsive map 
-      function initialize() {
-      var myLatlng = new google.maps.LatLng(53.3333,-3.08333);
-      var imagePath = 'http://m.schuepfen.ch/icons/helveticons/black/60/Pin-location.png'
-      var mapOptions = {
-        zoom: 11,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      }
+  // Google responsive map 
+  function initialize() 
+  {
+    var myLatlng = new google.maps.LatLng(53.3333,-3.08333);
+    var imagePath = 'http://m.schuepfen.ch/icons/helveticons/black/60/Pin-location.png'
+    var mapOptions = {
+      zoom: 11,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
 
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     //Callout Content
@@ -193,5 +143,59 @@ $(function() {
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
+
+
+  // detail page booking form 
+  var element = $('#bookingform');
+  if(element.length > 0) 
+  {
+    var form = $('#bookingform');
+
+    // Get the messages div.
+    var formMessages = $('#form-messages');
+
+    // Set up an event listener for the contact form.
+    $(form).submit(function(event) {
+        // Stop the browser from submitting the form.
+        event.preventDefault();
+
+        // Serialize the form data.
+        var formData = $(form).serialize();
+
+        $.ajax({
+            type: 'POST',
+            url: $(form).attr('action'),
+            data: formData
+        })
+
+        .done(function(response) {
+            // Make sure that the formMessages div has the 'success' class.
+            $(formMessages).removeClass('error');
+            $(formMessages).addClass('success');
+            $(form).hide();
+
+            // Set the message text.
+            $(formMessages).text(response);
+
+            $('#booking-form')[0].reset();
+        })
+
+        .fail(function(data) {
+            // Make sure that the formMessages div has the 'error' class.
+            $(formMessages).removeClass('success');
+            $(formMessages).addClass('error');
+            $(form).hide();
+
+            // Set the message text.
+            if (data.responseText !== '') {
+                $(formMessages).text(data.responseText);
+            } else {
+                $(formMessages).text('Oops! An error occured and your message could not be sent.');
+            }
+        });
+
+    });
+  }
+
 </script>
 </html>

@@ -31,7 +31,7 @@
     	</div>
 
 	
-        <div class="b-pic__check b-pic__phone">
+        <div class="b-pic__check b-pic__phone" data-toggle="modal" data-target="#myModalHorizontal">
 
             <i class="fa fa-ticket b-pic__check__icon"></i>
 
@@ -64,7 +64,7 @@
 	<div class="container-fluid no-padding lightbg">
 		<div class="col-md-12 ">
 			<div class="col-md-8 ">
-				<h2 class="secondmain-heading">Tour to Dubai Rainforest</h2>
+				<h2 class="secondmain-heading"><?php echo $singlelist[0]->list_title;  ?></h2>
 				<ul class="list-unstyled list-feature">
 					<li class="list-expire">
 						<p><strong><i class="fa fa-calendar-times-o" aria-hidden="true"></i></strong> 28SEP2017</p>
@@ -78,7 +78,7 @@
 					</li>
 				</ul>
 				<div class="white-bg detail-text" " >
-					<?php print_r($singlelist); ?>
+					
 					<p>
 					<?php echo $singlelist[0]->list_desc;  ?> </p>
 				</div>
@@ -145,200 +145,103 @@
 			</ul>
 		</div>
 	</div>
+	<!-- booking form  -->
+	<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <small>Booking for</small> <?php echo $singlelist[0]->list_title;  ?> <small>Price </small> <strong> <?php echo $singlelist[0]->price;  ?> <sup>AED</sup></strong>
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <div id="form-messages"></div>
+                <?php echo form_open('home/bookoffer',array('id'=>'bookingform','class'=>'form-horizontal','role'=>'form')); ?>
+	                <div class="form-group">
+	                    <label  class="col-sm-2 control-label"
+	                              for="persons">Persons</label>
+	                    <div class="col-sm-10">
+	                        <select name="totalseat" class="form-control">
+	                        	<option value="1">1 Person</option>
+	                        	<option value="2">2 Persons</option>
+	                        	<option value="3">3 Persons</option>
+	                        	<option value="4">4 Persons</option>
+	                        	<option value="5">5 Persons</option>
+	                        	<option value="6">6 Persons</option>
+	                        	<option value="7">7 Persons</option>
+	                        	<option value="8">8 Persons</option>
+	                        	<option value="9">9 Persons</option>
+	                        	<option value="10">10 Persons</option>
+	                        </select>
+	                    </div>
+	                </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="name">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="name" name="name" placeholder="Full Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" 
+                        id="email" name="email" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="mobile">Mobile</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" 
+                        id="mobile" name="mobile" placeholder="Mobile Number"/>
+                        <input type="hidden" readonly="" 
+                        id="offerid" name="offerid" value="<?php echo $singlelist[0]->list_id;  ?>" />
+                        <input type="hidden" readonly="" id="price" name="price" value="<?php echo $singlelist[0]->price;  ?>" />
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default">Book Now</button>
+                    </div>
+                  </div>
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div> -->
+        </div>
+    </div>
+</div>
 	<style type="text/css">
-	.lightbg {
-		background: #f8f8f8;
-	}	
 	
-	.b-pic--place {
-    	background-attachment: fixed;
-    	background-position: center;
-    	background-size: cover;
-    	height: calc(100vh - 80px);
-    	position: relative;
-	}
-.b-pic-hgroup {
-	padding-top: 320px;
-}
-.b-pic-hgroup h1 {
-	padding-left: 50px;
-	color: #fff;
-	text-transform: uppercase;
-}
-.secondmain-heading {
-	text-transform: uppercase;
-}
-.b-pic-hgroup .desciption, .b-pic__descr {
-    color: #fff;
-    margin-top: 20px;
-    font-size: 16px;
-    width: 70%;
-    padding-left: 50px;
-    font-family: roboto;
-}
-.b-pic__check {
-    position: absolute;
-    right: 0;
-    z-index: 11111;
-    bottom: 0;
-    background: #de443a;
-    padding: 20px 35px;
-    color: #fff;
-    min-width: 260px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-}
-.b-pic__address .b-pic__check__title, .b-pic__phone .b-pic__check__title {
-    display: none;
-}
-.b-pic__address i, .b-pic__phone i, .b-pic__see-more i {
-    font-size: 28px;
-    position: absolute;
-    left: 25px;
-    top: 16px;
-    color: #fff;
-}
-.b-pic__phone i {
-	top: 26px;
-}
-.b-pic__address i {
-    left: 29px;
-    top: 28px;
-}
-.b-pic__check__amount {
-    font: 500 24px Roboto;
-    clear: right;
-    margin-left: 30px;
-}
-.b-pic__address, .b-pic__phone, .b-pic__see-more {
-    height: 80px;
-    bottom: 160px;
-    padding-top: 15px;
-    padding-right: 0;
-    width: 315px;
-}
-.b-pic__address {
-    display: flex;
-    align-items: center;
-}
-.b-pic__phone {
-    bottom: 80px;
-}
-.b-pic__see-more {
-    bottom: 0;
-    padding-right: 0;
-    padding-top: 28px;
-    border: none;
-    cursor: pointer;
-}
-.address-value, .phone-value {
-    font-size: 14px;
-    font-weight: 100;
-    display: block;
-    margin-top: 5px;
-    max-width: 250px;
-    padding-right: 15px;
-}
-.address-value {
-    
-    font-size: 26px;
-}
-.phone-value {
-    font-size: 18px;
-    padding-top: 10px;
-}
-.b-pic__check__title {
-    clear: right;
-    margin-left: 30px;
-    font-size: 18px;
-    color: #fff;
-}
-.b-pic__see-more i {
-    left: 22px;
-    -webkit-animation: arrow 1.5s both infinite;
-    animation: arrow 1.5s both infinite;
-    top: 26px;
-}
-.white-bg {
-	background-color: #fff;
-	box-shadow: 0px 2px 2px #ddd;
-    padding: 35px;
-	
-}
-.detail-text {
-	min-height: 400px;
-}
-.sidebar {
-	margin: 60px 0 0 0;
-}
-.googlemap {
-	border:1px solid #fefefe;
-}
-#map_container{
-  position: relative;
-}
-#map{
-    height: 220px;
-    overflow: hidden;
-    padding-bottom: 22.25%;
-    padding-top: 30px;
-    position: relative;
-}
-.white-bg.map-area {
-    padding: 20px;
-}
-.map-area address{
-	margin-bottom: 0;
-}
-address span {
-    display: block;
-    padding: 3px 0 6px 0;
-    font-size: 14px;
-}
-.map-area i.fa {
-    font-size: 16px;
-}
-address span strong {
-    margin: 0 5px 0 0px;
-}
-ul.list-feature {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin: 0 0 15px 0;
-    padding: 10px;
-    overflow: hidden;
-}
-.list-feature li {
-    display: block;
-    margin: 0 0 0 0;
-    width: 33%;
-    float: left;
-}
-.list-review {
-	text-align: center;
-}
-.list-share {
-	float: right;
-	text-align: right;
-}
-.list-feature li p{
-    padding: 0;
-    margin: 5px 0 0 0;
-}
-div#atstbx {
-    padding: 0px 0 0 0;
-    height: 27px;
-}
-ul.list-images {
-    margin: 20px 0;
-    padding: 0 0;
-}
-ul.list-images li {
-	display:block;
-	float: left;
-}
-ul.list-images li img.img-responsive {
-    width: 210px;
-}
 	</style>
 	
 

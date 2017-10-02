@@ -278,11 +278,12 @@ class User extends CI_Controller {
 
     }
 
-    function getRandomWord($len = 10) {
+    function getRandomWord($len = 10) 
+    {
         $word = array_merge(range('a', 'z'), range('A', 'Z'), range(0, 9));
         shuffle($word);
         return substr(implode($word), 0, $len);
-}
+    }
 
 
 

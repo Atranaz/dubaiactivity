@@ -6,7 +6,8 @@ class Home_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-	public function featListing() {
+	public function featListing() 
+    {
 
         $this->db->select('*');
         $this->db->from('tbl_list AS tbl');
@@ -32,6 +33,26 @@ class Home_model extends CI_Model
         $query = $this->db->get();
         $List = $query->result();
         return $List;
+    }
+
+    public function bookingNow($userInfo, $bookingdata)
+    {
+        $this->db->trans_start();
+        
+        $this->db->insert('tbl_fusers', $userInfo);
+        
+        $userID = $this->db->insert_id();
+
+        //insert the last insert id in array
+        $bookingdata['user_id'] = $userID;
+
+        $this->db->insert('tbl_booking',$bookingdata );
+
+        $booking_id = $this->db->insert_id();
+        
+        $this->db->trans_complete();
+        
+        return $booking_id;
     }
 }
 

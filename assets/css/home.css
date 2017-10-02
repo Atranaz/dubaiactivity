@@ -4,30 +4,30 @@
 }
 @font-face {
   font-family: 'proxmanova';
-  src: url('../fonts/ProximaNova-Regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/ProximaNova-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/ProximaNova-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/ProximaNova-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/ProximaNova-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/proximanova-regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/proximanova-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/proximanova-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/proximanova-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/proximanova-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/proximanova-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
   font-family: 'proxmanovalight';
-  src: url('../fonts/ProximaNova-Light.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/ProximaNova-Light.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/ProximaNova-Light.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/ProximaNova-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/ProximaNova-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/proximanova-light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/proximanova-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/proximanova-light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/proximanova-light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/proximanova-light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/proximanova-light.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
   font-family: 'proxmanovabold';
-  src: url('../fonts/ProximaNova-Bold.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/ProximaNova-Bold.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/ProximaNova-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/ProximaNova-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/ProximaNova-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/proximanova-bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/proximanova-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/proximanova-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/proximanova-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/proximanova-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/proximanova-bold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 a {
     
@@ -51,6 +51,9 @@ a {
  .dd-whitebg {
   background-color: #fff;
  }
+/* .dd-whitebg.affix {
+  background-color: rgba(255, 255, 255, .8);
+ }*/
   /* Note: Try to remove the following lines to see the effect of CSS positioning */
   .affix {
       top: 0;
@@ -1435,6 +1438,250 @@ a#du-mpshwmore span.du-mprotatearrow {
 }
 
 /* User Account Ends HERe */
+
+/* Detail Page */
+
+.lightbg {
+    background: #f8f8f8;
+  } 
+  
+  .b-pic--place {
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      height: calc(100vh - 80px);
+      position: relative;
+  }
+.b-pic-hgroup {
+  padding-top: 320px;
+}
+.b-pic-hgroup h1 {
+  padding-left: 50px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.secondmain-heading {
+  text-transform: uppercase;
+}
+.b-pic-hgroup .desciption, .b-pic__descr {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 16px;
+    width: 70%;
+    padding-left: 50px;
+    font-family: roboto;
+}
+.b-pic__check {
+    position: absolute;
+    right: 0;
+    z-index: 11111;
+    bottom: 0;
+    background: #de443a;
+    padding: 20px 35px;
+    color: #fff;
+    min-width: 260px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.b-pic__address .b-pic__check__title, .b-pic__phone .b-pic__check__title {
+    display: none;
+}
+.b-pic__address i, .b-pic__phone i, .b-pic__see-more i {
+    font-size: 28px;
+    position: absolute;
+    left: 25px;
+    top: 16px;
+    color: #fff;
+}
+.b-pic__phone i {
+  top: 26px;
+}
+.b-pic__address i {
+    left: 29px;
+    top: 28px;
+}
+.b-pic__check__amount {
+    font: 500 24px Roboto;
+    clear: right;
+    margin-left: 30px;
+}
+.b-pic__address, .b-pic__phone, .b-pic__see-more {
+    height: 80px;
+    bottom: 160px;
+    padding-top: 15px;
+    padding-right: 0;
+    width: 315px;
+}
+.b-pic__address {
+    display: flex;
+    align-items: center;
+}
+.b-pic__phone {
+    bottom: 80px;
+    cursor: pointer;
+}
+.b-pic__phone:hover {
+  background: #00ccea;
+}
+.b-pic__see-more {
+    bottom: 0;
+    padding-right: 0;
+    padding-top: 28px;
+    border: none;
+    cursor: pointer;
+}
+.address-value, .phone-value {
+    font-size: 14px;
+    font-weight: 100;
+    display: block;
+    margin-top: 5px;
+    max-width: 250px;
+    padding-right: 15px;
+}
+.address-value {
+    
+    font-size: 26px;
+}
+.phone-value {
+    font-size: 18px;
+    padding-top: 10px;
+}
+.b-pic__check__title {
+    clear: right;
+    margin-left: 30px;
+    font-size: 18px;
+    color: #fff;
+}
+.b-pic__see-more i {
+    left: 22px;
+    -webkit-animation: arrow 1.5s both infinite;
+    animation: arrow 1.5s both infinite;
+    top: 26px;
+}
+.white-bg {
+  background-color: #fff;
+  box-shadow: 0px 2px 2px #ddd;
+    padding: 35px;
+  
+}
+.detail-text {
+  min-height: 400px;
+}
+.sidebar {
+  margin: 60px 0 0 0;
+}
+.googlemap {
+  border:1px solid #fefefe;
+}
+#map_container{
+  position: relative;
+}
+#map{
+    height: 220px;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
+}
+.white-bg.map-area {
+    padding: 20px;
+}
+.map-area address{
+  margin-bottom: 0;
+}
+address span {
+    display: block;
+    padding: 3px 0 6px 0;
+    font-size: 14px;
+}
+.map-area i.fa {
+    font-size: 16px;
+}
+address span strong {
+    margin: 0 5px 0 0px;
+}
+ul.list-feature {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0 0 15px 0;
+    padding: 10px;
+    overflow: hidden;
+}
+.list-feature li {
+    display: block;
+    margin: 0 0 0 0;
+    width: 33%;
+    float: left;
+}
+.list-review {
+  text-align: center;
+}
+.list-share {
+  float: right;
+  text-align: right;
+}
+.list-feature li p{
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+div#atstbx {
+    padding: 0px 0 0 0;
+    height: 27px;
+}
+ul.list-images {
+    margin: 20px 0;
+    padding: 0 0;
+}
+ul.list-images li {
+  display:block;
+  float: left;
+}
+ul.list-images li img.img-responsive {
+    width: 210px;
+}
+
+div#form-messages {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-family: 'proxmanovalight',verdana, serif;
+}
+
+/* Detail Page End Here */
+
+
+/* Category Page Start here */
+.category-view {
+  padding-top: 20px;
+}
+.offer-details {
+    background: #f1f1f1;
+    padding: 10px 10px 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+h4.offer-title {
+    margin: 10px 0 0 0;
+    padding: 0;
+    color: #666;
+    font-size: 16px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+h4.offer-price {
+    margin: 10px 0 0 0;
+    padding: 0;
+    float: right;
+}
+
+/* Category Page End here */
 
 
 /* Responsive Work Start From Here

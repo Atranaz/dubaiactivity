@@ -57,6 +57,8 @@ $route['detailpage'] = 'detailpage';
 
 // FOR FRONT SIDE
 $route['detailpage/(:any)'] = "detailpage/index/$1";
+$route['category'] = 'category';
+$route['category/(:num)'] = "category/index/$1";
 
  // FOR ADMIN SIDE
 $route['cms'] = 'cms/login';
