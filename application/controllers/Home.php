@@ -34,11 +34,12 @@ class Home extends CI_Controller {
 		$this->form_validation->set_rules('mobile', 'Contact No.', 'required'); // Validation for Contact Field.
 		$this->form_validation->set_rules('offerid', 'offer title', 'required');
 		$this->form_validation->set_rules('price', 'offer Price', 'required');
+		$this->form_validation->set_rules('usercheck', 'Check User', 'required');
 			
 		if ($this->form_validation->run() == FALSE) 
 		{
 			http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "Oops! Something went wrong contact with your administrator.";
 		}else 
 		{
 			

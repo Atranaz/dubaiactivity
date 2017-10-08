@@ -5,7 +5,7 @@ class Fuser_model extends CI_Model
 
 	function login($email,$password)
 	{
-		$this->db->select('userID, email, password, name, isActive, roleId');
+		$this->db->select('userID, email, password, name, mobile, isActive, roleId');
         $this->db->from('tbl_fusers');
         $this->db->where('email', $email);
         $this->db->where('isActive', 1);

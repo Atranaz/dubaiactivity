@@ -82,6 +82,7 @@ class User extends CI_Controller {
                                             'role'=>$res->roleId,
                                             'name'=>$res->name,
                                             'email'=>$res->email,
+                                            'mobile'=>$res->mobile,
                                             'isLoggedIn' => TRUE
                                     );
                                     
