@@ -67,7 +67,7 @@ class Offer_list extends BaseController
         $this->form_validation->set_rules('web', 'Web URL');
         $this->form_validation->set_rules('tel', 'Tele Phone');
         $this->form_validation->set_rules('mobile', 'Mobile');
-        $this->form_validation->set_rules('timefrom', 'Opening Time', 'required');
+        $this->form_validation->set_rules('timefrom', 'Opening Time');
         $this->form_validation->set_rules('timeto', 'Closing Time');
         $this->form_validation->set_rules('expireOn', 'Offer Expire On');
 

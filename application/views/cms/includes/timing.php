@@ -1,0 +1,26 @@
+<!-- set value always sent by laodviaw data option -->
+<option value="">Select</option>
+<option <?php selectdCheck($setvalue,1); ?> value="1">01:00</option>
+<option <?php selectdCheck($setvalue,2); ?> value="2">02:00</option>
+<option <?php selectdCheck($setvalue,3); ?> value="3">03:00</option>
+<option <?php selectdCheck($setvalue,4); ?> value="4">04:00</option>
+<option <?php selectdCheck($setvalue,5); ?> value="5">05:00</option>
+<option <?php selectdCheck($setvalue,6); ?> value="6">06:00</option>
+<option <?php selectdCheck($setvalue,7); ?> value="7">07:00</option>
+<option <?php selectdCheck($setvalue,8); ?> value="8">08:00</option>
+<option <?php selectdCheck($setvalue,9); ?> value="9">09:00</option>
+<option <?php selectdCheck($setvalue,10); ?> value="10">10:00</option>
+<option <?php selectdCheck($setvalue,11); ?> value="11">11:00</option>
+<option <?php selectdCheck($setvalue,12); ?> value="12">12:00</option>
+<option <?php selectdCheck($setvalue,13); ?> value="13">13:00</option>
+<option <?php selectdCheck($setvalue,14); ?> value="14">14:00</option>
+<option <?php selectdCheck($setvalue,15); ?> value="15">15:00</option>
+<option <?php selectdCheck($setvalue,16); ?> value="16">16:00</option>
+<option <?php selectdCheck($setvalue,17); ?> value="17">17:00</option>
+<option <?php selectdCheck($setvalue,18); ?> value="18">18:00</option>
+<option <?php selectdCheck($setvalue,19); ?> value="19">19:00</option>
+<option <?php selectdCheck($setvalue,20); ?> value="20">20:00</option>
+<option <?php selectdCheck($setvalue,21); ?> value="21">21:00</option>
+<option <?php selectdCheck($setvalue,22); ?> value="22">22:00</option>
+<option <?php selectdCheck($setvalue,23); ?> value="23">23:00</option>
+<option <?php selectdCheck($setvalue,24); ?> value="24">24:00</option>

@@ -55,7 +55,13 @@ Class List_model extends CI_Model
 
     function updateList($listarray, $listinfo, $editLid)
     {
+        $this->db->trans_start();
+        
         $this->db->update('tbl_list', $listarray, "list_id =".$editLid."");
+        $listinfo['list_id'] = $editLid;
+        $this->db->update('tbl_list_info', $listinfo, "list_id =".$editLid."");
+        
+        $this->db->trans_complete();
     }
 
     function changeImg($imgarray,$editLid)
