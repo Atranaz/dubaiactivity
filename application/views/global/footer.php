@@ -40,7 +40,7 @@
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
     <script src='<?php echo base_url(); ?>assets/js/jquery.newsTicker.min.js'></script>
     <script src='<?php echo base_url(); ?>assets/js/owl.carousel.js'></script>
-    <script src='<?php echo base_url(); ?>assets/js/responsive-calendar.min.js'></script>
+    
     
     <!-- 
 	disabled some issue will be fix soon

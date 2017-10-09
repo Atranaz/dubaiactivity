@@ -1453,12 +1453,14 @@ a#du-mpshwmore span.du-mprotatearrow {
       position: relative;
   }
 .b-pic-hgroup {
-  padding-top: 320px;
+  padding-top: 330px;
 }
 .b-pic-hgroup h1 {
-  padding-left: 50px;
+  padding: 26px 15px 25px 50px;
   color: #fff;
   text-transform: uppercase;
+  font-size: 26px;
+  background: rgba(255, 255, 255, .40);
 }
 .secondmain-heading {
   text-transform: uppercase;

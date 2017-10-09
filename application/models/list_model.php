@@ -22,6 +22,7 @@ Class List_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_list AS tbl');
+        $this->db->join('tbl_list_info AS tlf', 'tbl.list_id = tlf.list_id', 'INNER');
         $this->db->join('tbl_list_imgs AS tli', 'tbl.list_id = tli.list_id', 'INNER');
         $this->db->order_by("created_at", "desc");
         $this->db->where('is_active', 1);
@@ -32,16 +33,19 @@ Class List_model extends CI_Model
         return $List;
     }
 
-    public function AddList($listarray, $imgarray) 
+    public function AddList($listarray, $listinfo, $imgarray) 
     {
 
         $this->db->trans_start();
         $this->db->insert('tbl_list', $listarray);
 
         $insert_id = $this->db->insert_id();
+        
         //insert the last insert id in array
+        $listinfo['list_id'] = $insert_id;
         $imgarray['list_id'] = $insert_id;
 
+        $this->db->insert('tbl_list_info', $listinfo);
         $this->db->insert('tbl_list_imgs', $imgarray);
         
         $this->db->trans_complete();
@@ -49,7 +53,7 @@ Class List_model extends CI_Model
         return $insert_id;
     }
 
-    function updateList($listarray,$editLid)
+    function updateList($listarray, $listinfo, $editLid)
     {
         $this->db->update('tbl_list', $listarray, "list_id =".$editLid."");
     }

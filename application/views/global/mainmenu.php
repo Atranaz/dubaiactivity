@@ -16,7 +16,7 @@
           	<div class="navbar-collapse collapse no-padding">
 		        <ul class="nav nav-pills nav-ddmenu pull-right">
 		            <li class="dropdown menu-large">
-		            	<a class="dropdown-toggle" data-toggle="dropdown" href="#">Kids Activities</a>
+		            	<a class=""  href="<?php echo base_url() ?>category/1">Kids Activities</a>
 						<!-- <ul class="dropdown-menu megamenu row">
 							<li>
 								<div class="col-sm-6 col-md-4 no-padding">

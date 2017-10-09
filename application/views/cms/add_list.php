@@ -57,137 +57,85 @@
 
                     echo form_open_multipart('cms/offer_list/addList' , 'class="addlist" id="listform"'); ?>
 
-                    <?php if (empty($listData)) { ?>
+
+
+                    <?php 
+                    
+                    function selectdCheck($value1,$value2)
+                    {
+                        if ($value1 == $value2) {
+                            echo 'selected="selected"';
+                        } else 
+                        {
+                            echo '';
+                        }
+                        return;
+                    }
+                    function checkCheck($value)
+                    {
+                        if ($value == 1) {
+                            echo 'checked="checked"';
+                        } else 
+                        {
+                            echo '';
+                        }
+                        return;
+                    }
+                    if (empty($listData)) 
+                    {
+                        $title = '';
+                        $slug = '';
+                        $catID = '';
+                        $typeID = '';
+                        $companyID = '';
+                        $price = '';
+                        $description = '';
+                        $free = '';
+                        $active = '';
+                        $featured = '';
+                        $listID = '';
+
+                        $address = '';
+                        $web = '';
+                        $tel = '';
+                        $mobile = '';
+                        $timefrom = '';
+                        $timeto = '';
+                        $expire = '';
+
+                    } else
+                    {
+                        $title = $listData[0]->list_title;
+                        $slug = $listData[0]->list_slug;
+                        $catID = $listData[0]->category_id;
+                        $typeID = $listData[0]->type_id;
+                        $companyID = $listData[0]->company_id;
+                        $price = $listData[0]->price;
+                        $description = $listData[0]->list_desc;
+                        $free = $listData[0]->is_free;
+                        $active = $listData[0]->is_active;
+                        $featured = $listData[0]->is_featured;
+                        $listID = $listData[0]->list_id;
+
+                        $address = $listData[0]->address;
+                        $web = $listData[0]->web;
+                        $tel = $listData[0]->tel;
+                        $mobile = $listData[0]->mobile;
+                        $timefrom = $listData[0]->fromHours;
+                        $timeto = $listData[0]->toHours;
+                        $expire = $listData[0]->expire;
                         
-                        <!-- add area -->
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-md-6">                                
-                                    <div class="form-group">
-                                        <label for="title">Title</label>
-                                        <input type="text" class="form-control title required" id="title" name="title" value="" maxlength="128" required="true">
-
-
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="slug">Slug</label>
-                                        <input type="text" class="form-control slug required" id="slug"  name="slug" value="" maxlength="128">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="category">Category</label>
-                                        <select class="form-control required" id="category" name="category" required="true">
-                                            <option value="">Select Category</option>
-                                            <option 
-                                            
-                                            value="1" >Entertainment</option>
-                                            <option 
-                                            
-                                            value="2" >Education</option>
-                                            <option 
-                                           
-                                            value="3">Knowledge Base</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="type">Type</label>
-                                        <select class="form-control required" id="type" name="type" required="true">
-                                            <option value="" >Select Type</option>
-                                            <option 
-                                            
-                                            value="1" >Kids Activities</option>
-                                            <option 
-                                            
-                                            value="2">Family Activities</option>
-                                            <option 
-                                            
-                                            value="3">Parent Activities without</option>
-                                        </select>
-                                    </div>
-                                </div>    
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="category">Company</label>
-                                        <select class="form-control required" id="company" name="company" required>
-                                            <option value="" >Select Company</option>
-                                            <option 
-                                           
-                                            value="1" >Play It</option>
-                                            <option 
-                                            
-                                            value="2">Al Ehli Club</option>
-                                            <option 
-                                            
-                                            value="3" >Farari Worl</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">                                
-                                    <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input type="number" class="form-control" id="price" name="price" value="">
-                                    </div>
-
-                                </div>  
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="description">Desc</label>
-                                        <textarea class="form-control" id="description" rows="3" name="description" required="true">
-                                        </textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="options">Select Options</label><br>
-                                        <label class="checkbox-inline">
-                                          <input name="free" id="free" type="checkbox" value="1"> Is Free
-                                        </label>
-                                        <label class="checkbox-inline">
-                                          <input name="active" id="active" type="checkbox" value="1"
-                                          required="true" <?php echo set_checkbox('active', '1'); ?>>  Is Active
-                                        </label>
-                                        <label class="checkbox-inline">
-                                          <input name="featured" id="featured" type="checkbox" value="1"
-                                           <?php echo set_checkbox('featured', '1'); ?>>Is Featured
-                                        </label>
-                                        <input type="hidden" readonly="" value="" name="editLid" />
-                                  </div>
-                                </div>
-                                <div class="col-md-6">
-                                
-                                 <div class="form-group">
-                                    <label for="options">Select Options</label><br>
-                                    <input type="file" class="form-control" id="file" name="imgfile" value="<?php set_value('imgfile') ?>">
-
-                                   
-
-                                    </div>
-                                </div>    
-                            </div>
-                        </div><!-- /.box-body -->
-
-                    <?php } else { ?>
+                    }                        
+                        
+                     ?>
+                    
                         <!-- edit area  -->
                         <div class="box-body">
                             <div class="row">
                                 <div class="col-md-6">                                
                                     <div class="form-group">
                                         <label for="title">Title</label>
-                                        <input type="text" class="form-control title required" id="title" name="title" value="<?php echo $listData[0]->list_title ?>" maxlength="128" required="true">
+                                        <input type="text" class="form-control title required" id="title" name="title" value="<?php echo $title ?>" maxlength="128" required="true">
 
 
                                     </div>
@@ -196,7 +144,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="slug">Slug</label>
-                                        <input type="text" class="form-control slug required" id="slug"  name="slug" value="<?php echo $listData[0]->list_slug ?>" maxlength="128">
+                                        <input type="text" class="form-control slug required" id="slug"  name="slug" value="<?php echo $slug ?>" maxlength="128">
                                     </div>
                                 </div>
                             </div>
@@ -207,13 +155,13 @@
                                         <select class="form-control required" id="category" name="category" required="true">
                                             <option value="" <?php echo  set_select('myselect', '0', TRUE); ?>>Select Category</option>
                                             <option 
-                                            <?php if($listData[0]->category_id == 1 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($catID,1); ?>
                                             value="1" <?php echo  set_select('myselect', '1'); ?>>Entertainment</option>
                                             <option 
-                                            <?php if($listData[0]->category_id == 2 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($catID,2); ?>
                                             value="2" <?php echo  set_select('myselect', '2'); ?>>Education</option>
                                             <option 
-                                            <?php if($listData[0]->category_id == 3 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($catID,3); ?>
                                             value="3" <?php echo  set_select('myselect', '3'); ?>>Knowledge Base</option>
                                         </select>
                                     </div>
@@ -224,13 +172,13 @@
                                         <select class="form-control required" id="type" name="type" required="true">
                                             <option value="" <?php echo  set_select('myselect', '0'); ?>>Select Type</option>
                                             <option 
-                                            <?php if($listData[0]->type_id == 1 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($typeID,1); ?>
                                             value="1" <?php echo  set_select('myselect', '1'); ?>>Kids Activities</option>
                                             <option 
-                                            <?php if($listData[0]->type_id == 2 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($typeID,2); ?>
                                             value="2" <?php echo  set_select('myselect', '2'); ?>>Family Activities</option>
                                             <option 
-                                            <?php if($listData[0]->type_id == 3 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($typeID,3); ?>
                                             value="3" <?php echo  set_select('myselect', '3'); ?>>Parent Activities without</option>
                                         </select>
                                     </div>
@@ -243,13 +191,13 @@
                                         <select class="form-control required" id="company" name="company" required>
                                             <option value="" <?php echo  set_select('myselect', '0'); ?>>Select Company</option>
                                             <option 
-                                            <?php if($listData[0]->company_id == 1 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($companyID,1); ?>
                                             value="1" <?php echo  set_select('myselect', '1'); ?>>Play It</option>
                                             <option 
-                                            <?php if($listData[0]->company_id == 2 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($companyID,2); ?>
                                             value="2" <?php echo  set_select('myselect', '2'); ?>>Al Ehli Club</option>
                                             <option 
-                                            <?php if($listData[0]->company_id == 3 ){ echo 'selected="selected"';} ?>
+                                            <?php selectdCheck($companyID,3); ?>
                                             value="3" <?php echo  set_select('myselect', '3'); ?>>Farari Worl</option>
                                         </select>
                                     </div>
@@ -257,7 +205,7 @@
                                 <div class="col-md-6">                                
                                     <div class="form-group">
                                         <label for="price">Price</label>
-                                        <input type="number" class="form-control" id="price" name="price" value="<?php echo $listData[0]->price ?>">
+                                        <input type="number" class="form-control" id="price" name="price" value="<?php echo $price ?>">
                                     </div>
 
                                 </div>  
@@ -266,33 +214,132 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="description">Desc</label>
-                                        <textarea class="form-control" id="description" rows="3" name="description" required="true"><?php echo $listData[0]->list_desc ?>
-                                        </textarea>
+                                        <textarea class="form-control" id="description" rows="3" name="description" required="true"><?php echo $description ?></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="">Location</label>
+                                        <input class="form-control" type="text" name="address" value="<?php echo $address ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Web</label>
+                                        <input class="form-control" type="text" name="web" value="<?php echo $web ?>">
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Tel</label>
+                                        <input class="form-control" type="tel" name="tel" value="<?php echo $tel ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Mobile</label>
+                                        <input class="form-control" type="tel" name="mobile" value="<?php echo $mobile ?>">
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group col-md-6">
+                                        <label for="">Opening Hours</label>
+                                        <select class="form-control" name="timefrom">
+                                            <option value="">Select</option>
+                                            <option value="1">01:00</option>
+                                            <option value="2">02:00</option>
+                                            <option value="3">03:00</option>
+                                            <option value="4">04:00</option>
+                                            <option value="5">05:00</option>
+                                            <option value="6">06:00</option>
+                                            <option value="7">07:00</option>
+                                            <option value="8">08:00</option>
+                                            <option value="9">09:00</option>
+                                            <option value="10">10:00</option>
+                                            <option value="11">11:00</option>
+                                            <option value="12">12:00</option>
+                                            <option value="13">13:00</option>
+                                            <option value="14">14:00</option>
+                                            <option value="15">15:00</option>
+                                            <option value="16">16:00</option>
+                                            <option value="17">17:00</option>
+                                            <option value="18">18:00</option>
+                                            <option value="19">19:00</option>
+                                            <option value="20">20:00</option>
+                                            <option value="21">21:00</option>
+                                            <option value="22">22:00</option>
+                                            <option value="23">23:00</option>
+                                            <option value="24">24:00</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">-</label>
+                                        <select class="form-control" name="timeto">
+                                            <option value="">Select</option>
+                                            <option value="1">01:00</option>
+                                            <option value="2">02:00</option>
+                                            <option value="3">03:00</option>
+                                            <option value="4">04:00</option>
+                                            <option value="5">05:00</option>
+                                            <option value="6">06:00</option>
+                                            <option value="7">07:00</option>
+                                            <option value="8">08:00</option>
+                                            <option value="9">09:00</option>
+                                            <option value="10">10:00</option>
+                                            <option value="11">11:00</option>
+                                            <option value="12">12:00</option>
+                                            <option value="13">13:00</option>
+                                            <option value="14">14:00</option>
+                                            <option value="15">15:00</option>
+                                            <option value="16">16:00</option>
+                                            <option value="17">17:00</option>
+                                            <option value="18">18:00</option>
+                                            <option value="19">19:00</option>
+                                            <option value="20">20:00</option>
+                                            <option value="21">21:00</option>
+                                            <option value="22">22:00</option>
+                                            <option value="23">23:00</option>
+                                            <option value="24">24:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Offer Date</label>
+                                        <input class="form-control" type="text" name="expireOn" value="<?php echo $expire ?>" />
+                                        
+                                    </div>
+                                </div>    
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label for="options">Select Options</label><br>
                                         <label class="checkbox-inline">
                                           <input name="free" id="free" type="checkbox" value="1"
-                                          <?php if($listData[0]->is_free == 1 ){ echo 'checked="checked"';} ?> <?php echo set_checkbox('free', '1'); ?> > Is Free
+                                          <?php checkCheck($free);  ?> <?php echo set_checkbox('free', '1'); ?> > Is Free
                                         </label>
                                         <label class="checkbox-inline">
                                           <input name="active" id="active" type="checkbox" value="1"
-                                          <?php if($listData[0]->is_active == 1 ){ echo 'checked="checked"';} ?>
+                                          <?php checkCheck($active); ?>
                                           required="true" <?php echo set_checkbox('active', '1'); ?>>  Is Active
                                         </label>
                                         <label class="checkbox-inline">
                                           <input name="featured" id="featured" type="checkbox" value="1"
-                                          <?php if($listData[0]->is_featured == 1 ){ echo 'checked="checked"';} ?> <?php echo set_checkbox('featured', '1'); ?>>Is Featured
+                                          <?php checkCheck($featured); ?> <?php echo set_checkbox('featured', '1'); ?>>Is Featured
                                         </label>
-                                        <input type="hidden" readonly="" value="<?php echo $listData[0]->list_id ?>" name="editLid" />
+                                        <input type="hidden" readonly="" value="<?php echo $listID ?>" name="editLid" />
                                   </div>
                                 </div>
                                 <div class="col-md-6">
-                                 <?php if(empty($listData[0]->list_id)) { ?>
+                                 <?php if(empty($listID)) { ?>
                                  <div class="form-group">
                                     <label for="options">Select Options</label><br>
                                     <input type="file" class="form-control" id="file" name="imgfile" value="<?php set_value('imgfile') ?>">
@@ -303,7 +350,7 @@
                                 </div>    
                             </div>
                         </div><!-- /.box-body -->
-                    <?php } ?>
+                    
             <div class="box-footer">
 
                 <input type="submit" class="btn btn-primary" value="Save it!" />
@@ -312,7 +359,7 @@
             <?php echo form_close(); ?>
         </div>
     </div>
-    <?php if(!empty($listData[0]->list_id)) {  ?>
+    <?php if(!empty($listID)) {  ?>
     <div class="box box-primary image-section">
         <div class="box-header">
             <h3 class="box-title">Image Section</h3>

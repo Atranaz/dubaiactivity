@@ -59,7 +59,7 @@
 			      			$featHTML .= '<img class="img-responsive" src="./uploads/'.$featlist[$i]->image_name.'" alt="'.$featlist[$i]->list_title.'">';
 			      			$featHTML .= '<div class="overlay">';
 			      			$featHTML .= '<h2>'.$featlist[$i]->list_title.'</h2>';
-			      			$featHTML .= '<p class="overlay-text">'.$featlist[$i]->list_desc.'</p>';
+			      			//$featHTML .= '<p class="overlay-text">'.$featlist[$i]->list_desc.'</p>';
 			      			$featHTML .= '<a class="info" href="#">View Details</a>';
 
 			      			$featHTML .= '</div>';

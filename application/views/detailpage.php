@@ -6,7 +6,7 @@
 	       
 
 	        <div class="desciption">
-				<?php echo $singlelist[0]->list_desc;  ?>            <a href="#" class="noajax">Read More</a>
+				<?php echo mb_strimwidth($singlelist[0]->list_desc, 0, 100, "...");  ?>            <a class="jumper" href="#detailtext">Read More</a>
 
 				        </div>
 	    </div>
@@ -145,126 +145,105 @@
 			</ul>
 		</div>
 	</div>
-	
 	<!-- booking form  -->
 	<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
      aria-labelledby="myModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-	    <div class="modal-dialog">
-	        <div class="modal-content">
-	            <!-- Modal Header -->
-	            <div class="modal-header">
-	                <button type="button" class="close" 
-	                   data-dismiss="modal">
-	                       <span aria-hidden="true">&times;</span>
-	                       <span class="sr-only">Close</span>
-	                </button>
-	                <h4 class="modal-title" id="myModalLabel">
-	                    <small>Booking for</small> <?php echo $singlelist[0]->list_title;  ?> <small>Price </small> <strong> <?php echo $singlelist[0]->price;  ?> <sup>AED</sup></strong>
-	                </h4>
-	            </div>
-	            
-	            <!-- Modal Body -->
-	            <div class="modal-body">
-	                <div id="form-messages"></div>
-	                
-	                <?php echo form_open('home/bookoffer',array('id'=>'bookingform','class'=>'form-horizontal','role'=>'form')); ?>
-						<div class="form-group">
-						    <label  class="col-sm-2 control-label"
-						              for="persons">Persons</label>
-						    <div class="col-sm-10">
-						        <select name="totalseat" class="form-control">
-						        	<option value="1">1 Person</option>
-						        	<option value="2">2 Persons</option>
-						        	<option value="3">3 Persons</option>
-						        	<option value="4">4 Persons</option>
-						        	<option value="5">5 Persons</option>
-						        	<option value="6">6 Persons</option>
-						        	<option value="7">7 Persons</option>
-						        	<option value="8">8 Persons</option>
-						        	<option value="9">9 Persons</option>
-						        	<option value="10">10 Persons</option>
-						        </select>
-						    </div>
-						</div>
-						<?php
-
-							$isLoggedIn = $this->session->userdata('isLoggedIn');
-							
-							
-							if (empty($isLoggedIn)) 
-							{
-								
-								$name = '';
-								$email = '';
-								$mobile = '';
-								$usercheck = '';
-
-							} else {
-
-								$name = $this->session->userdata('name');
-								$email = $this->session->userdata('email');
-								$mobile = $this->session->userdata('mobile');
-								$usercheck = $this->session->userdata('isLoggedIn');
-
-							}
-						?>
-						<div class="form-group">
-							<label  class="col-sm-2 control-label"
-							          for="name">Name</label>
-							<div class="col-sm-10">
-							    <input type="text" class="form-control" 
-							    id="name" name="name" placeholder="Full Name" value="<?php echo $name;  ?>" />
-							</div>
-						</div>
-						<div class="form-group">
-							<label  class="col-sm-2 control-label"
-							          for="email">Email</label>
-							<div class="col-sm-10">
-							    <input type="email" class="form-control" 
-							    id="email" name="email" placeholder="Email" value="<?php echo $email;  ?>"/>
-							</div>
-						</div>
-						<div class="form-group">
-							<label  class="col-sm-2 control-label"
-							          for="mobile">Mobile</label>
-							<div class="col-sm-10">
-							    <input type="tel" class="form-control" 
-							    id="mobile" name="mobile" placeholder="Mobile Number" value="<?php echo $mobile;  ?>"/>
-							    <input type="hidden" readonly="" 
-							    id="offerid" name="offerid" value="<?php echo $singlelist[0]->list_id;  ?>" />
-							    <input type="hidden" readonly="" id="price" name="price" value="<?php echo $singlelist[0]->price;  ?>" />
-							    <input type="hidden" readonly="" id="usercheck" name="usercheck" value="<?php echo $usercheck;  ?>" />
-							</div>
-						</div>
-						
-	                  
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-							  <button type="submit" class="btn btn-default">Book Now</button>
-							</div>
-						</div>
-	                </form>
-	                
-	                
-	                
-	                
-	                
-	                
-	            </div>
-	            
-	            <!-- Modal Footer -->
-	            <!-- <div class="modal-footer">
-	                <button type="button" class="btn btn-default"
-	                        data-dismiss="modal">
-	                            Close
-	                </button>
-	                <button type="button" class="btn btn-primary">
-	                    Save changes
-	                </button>
-	            </div> -->
-	        </div>
-	    </div>
-	</div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <small>Booking for</small> <?php echo $singlelist[0]->list_title;  ?> <small>Price </small> <strong> <?php echo $singlelist[0]->price;  ?> <sup>AED</sup></strong>
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <?php $this->load->helper('form'); ?>
+            <div class="modal-body">
+                <div id="form-messages"></div>
+                <?php echo form_open('home/bookoffer',array('id'=>'bookingform','class'=>'form-horizontal','role'=>'form')); ?>
+	                <div class="form-group">
+	                    <label  class="col-sm-2 control-label"
+	                              for="persons">Persons</label>
+	                    <div class="col-sm-10">
+	                        <select name="totalseat" class="form-control">
+	                        	<option value="1">1 Person</option>
+	                        	<option value="2">2 Persons</option>
+	                        	<option value="3">3 Persons</option>
+	                        	<option value="4">4 Persons</option>
+	                        	<option value="5">5 Persons</option>
+	                        	<option value="6">6 Persons</option>
+	                        	<option value="7">7 Persons</option>
+	                        	<option value="8">8 Persons</option>
+	                        	<option value="9">9 Persons</option>
+	                        	<option value="10">10 Persons</option>
+	                        </select>
+	                    </div>
+	                </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="name">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="name" name="name" placeholder="Full Name"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="email">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" 
+                        id="email" name="email" placeholder="Email"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="mobile">Mobile</label>
+                    <div class="col-sm-10">
+                        <input type="tel" class="form-control" 
+                        id="mobile" name="mobile" placeholder="Mobile Number"/>
+                        <input type="hidden" readonly="" 
+                        id="offerid" name="offerid" value="<?php echo $singlelist[0]->list_id;  ?>" />
+                        <input type="hidden" readonly="" id="price" name="price" value="<?php echo $singlelist[0]->price;  ?>" />
+                    </div>
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-default">Book Now</button>
+                    </div>
+                  </div>
+                </form>
+                
+                
+                
+                
+                
+                
+            </div>
+            
+            <!-- Modal Footer -->
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div> -->
+        </div>
+    </div>
+</div>
+	<style type="text/css">
+	
+	</style>
 	
 
 </div>

@@ -15,6 +15,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <!-- <link href="<?php echo base_url(); ?>assets/cms/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cms/dist/css/daterangepicker.css" />
     <link href="<?php echo base_url(); ?>assets/cms/dist/css/skins/skin-red.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>assets/cms/dist/css/admin-style.css" rel="stylesheet" type="text/css" />
     <style>

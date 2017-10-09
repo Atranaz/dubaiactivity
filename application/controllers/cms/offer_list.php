@@ -63,6 +63,15 @@ class Offer_list extends BaseController
         $this->form_validation->set_rules('description', 'Description', 'required');
         $this->form_validation->set_rules('active', 'Active', 'required');
 
+        $this->form_validation->set_rules('address', 'Address');
+        $this->form_validation->set_rules('web', 'Web URL');
+        $this->form_validation->set_rules('tel', 'Tele Phone');
+        $this->form_validation->set_rules('mobile', 'Mobile');
+        $this->form_validation->set_rules('timefrom', 'Opening Time', 'required');
+        $this->form_validation->set_rules('timeto', 'Closing Time');
+        $this->form_validation->set_rules('expireOn', 'Offer Expire On');
+
+
         if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('cms/add_list');
@@ -84,10 +93,20 @@ class Offer_list extends BaseController
             $free = $this->input->post('free');
             $featured = $this->input->post('featured');
 
+            $address = $this->input->post('address');
+            $web = $this->input->post('web');
+            $tel = $this->input->post('tel');
+            $mobile = $this->input->post('mobile');
+            $timefrom = $this->input->post('timefrom');
+            $timeto = $this->input->post('timeto');
+            $expire = $this->input->post('expireOn');
+
             $editLid = $this->input->post('editLid');
             $new_name = $slug;
             $imgname = '';
             $result = '';
+            $listid = '';
+            //exit($expire);
 
             if (empty($free)) {
                 
@@ -142,14 +161,16 @@ class Offer_list extends BaseController
             
             // create array for insert the data
             $listarray = array('list_title'=>$title, 'list_slug'=>$slug, 'list_desc'=>$description, 'category_id'=>$category, 'type_id'=>$type, 'company_id'=>$company, 'is_active'=>$active, 'is_featured'=>$featured, 'is_free'=>$free, 'price'=>$price, 'created_by'=>$admin, 'update_by'=>$admin, 'created_at'=>$date, 'updated_at'=>$date);
+            //list extra data array
+            $listinfo = array('list_id'=>$listid,'address'=>$address, 'web'=>$web, 'tel'=>$tel, 'mobile'=>$mobile, 'toHours'=>$timeto, 'fromHours'=>$timefrom, 'expire'=>$expire);
+            // list image array
             $imgarray = array('list_id'=>$listid, 'image_name'=>$imgname, 'isMain'=>1);
 
             if(empty($editLid))
             {
-                $result = $this->list_model->addList($listarray,$imgarray);
+                $result = $this->list_model->addList($listarray,$listinfo,$imgarray);
             } else {
-
-                $result = $this->list_model->updateList($listarray,$editLid);
+                $result = $this->list_model->updateList($listarray,$listinfo,$editLid);
             }
             if($result > 0)
             {
